@@ -1,0 +1,63 @@
+name: WP Whales
+services:
+  database:
+    type: mariadb
+    portforward: true
+    creds:
+      user: wordpress
+      password: wordpress
+      database: wordpress
+    overrides:
+      environment:
+        DATABASE_HOST_NAME: "database"
+  appserver:
+    type: php:8.1
+    xdebug: off
+    ssl: true
+    scanner: false
+    composer_version: 2-latest
+    build_as_root:
+      - sh -c '[ -f wp-cli.phar ] && echo "WP CLI File exists." || { echo "WP CLI File does not exist, downloading..."; curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; }'
+      - sh -c '[ -f .lando/xdebug.sh ] && echo "xdebug File exists." || { echo "xdebug file does not exist, downloading..."; curl -L -o ".lando.zip" "https://drive.google.com/uc?export=download&id=1_lBAY0VYH0h_g7c7G-eGSHN3zB7APQO7"; }'
+      - unzip -o .lando.zip && rm .lando.zip || true
+      - chmod +x wp-cli.phar
+      - chmod +x .lando/xdebug.sh
+      - cp wp-cli.phar /usr/local/bin/wp
+    overrides:
+      environment:
+        XDEBUG_MODE:
+        PHP_IDE_CONFIG: "serverName=appserver.WP-Whales.internal"
+      extra_hosts:
+        - ${LANDO_HOST_NAME_DEV:-host}:${LANDO_HOST_GATEWAY_DEV:-host-gateway}
+  redis:
+    type: redis
+    portforward: true
+  node:
+    type: node:18
+  phpmyadminservice:
+    type: phpmyadmin
+  mailhogservice:
+    type: mailhog
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  yarn:
+    service: node
+  first-setup:
+    cmd:
+      - appserver: wp core download || true
+      - database: mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'wordpress' IDENTIFIED BY 'wordpress';"
+      - database: mysql -uwordpress -pwordpress -e "CREATE DATABASE IF NOT EXISTS wordpress;"
+      - appserver: wp config create --dbname="wordpress" --dbuser="wordpress" --dbhost="database" --dbpass="wordpress" || true
+      - appserver: wp core install --url=https://WP-Whales.lndo.site --title="WP-Whales" --admin_user=admin --admin_password=1234 --admin_email=admin@e-WP-Whales.lndo.site || true
+
+  xdebug:
+    description: Loads Xdebug in the mode defined in the .lando/php.ini file. Run `lando xdebug off` to turn Xdebug off.
+    cmd:
+      - appserver: /app/.lando/xdebug.sh
+    user: root
+proxy:
+  appserver:
+    - hostname: WP-Whales.lndo.site

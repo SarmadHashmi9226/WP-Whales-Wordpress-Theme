@@ -1,0 +1,48 @@
+//---------------------------------------------
+//
+//  Table of Contents
+//
+//    1. Basics
+//    2. Page Layout
+//    3. Components
+//
+//---------------------------------------------
+
+//---------------------------------------------
+// 1. Basics
+//---------------------------------------------
+
+@use "variables";
+@use "../../node_modules/bootstrap/scss/bootstrap" as *;
+@use "components/slider";
+@use "fonts";
+@use "style";
+@use "case-study";
+@use "services";
+a {
+  font-family: variables.$font-mona; // or $font-inter / $font-mona
+}
+h3{
+  font-family: variables.$font-inter; // or $font-inter / $font-mona
+}
+// If you do not want to load the customized bootstrap version, just use the following line.
+// @use "~bootstrap/scss/bootstrap";
+
+//---------------------------------------------
+// 2. Page Layout
+//---------------------------------------------
+
+//make p tags font family to helvetica neue
+p {
+  font-family: variables.$font-helvetica;
+}
+.development{
+  font-family: variables.$font-mona;
+}
+//---------------------------------------------
+// 3.Components
+//---------------------------------------------
+
+body{
+  background-color: red($color: #000000);
+}
