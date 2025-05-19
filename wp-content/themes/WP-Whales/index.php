@@ -57,133 +57,72 @@
      
        <!-- Slick Carousel Wrapper -->
        <div class="slick-services">
-     
-         <!-- Card 1 -->
-         <div class="card">
-           <div class="card-body">
-             <img class="service-icon" src="<?php echo get_template_directory_uri(); ?>/src/images/service-development.png" alt="service-1" />
-             <h3>Development</h3>
-             <p class="service-content">We specialize in plugin and theme development, as well as custom web application solutions.</p>
-             <div class="extra-content">
-               <h3 class="extra">Development</h3>
-               <p class="extra-p service-content">We specialize in plugin, theme, and web application solution development.</p>
-               <ul class="service-list">
-                 <li>Plugin</li>
-                 <li>Web Application</li>
-                 <li>WordPress Theme</li>
-               </ul>
-               <div class="btn btn-large">
-                 <a href="#" class="nav-button">Learn More <i class="fas fa-circle default-icon"></i><i class="fas fa-arrow-right hover-icon"></i></a>
-               </div>
-             </div>
-           </div>
-         </div>
-     
-         <!-- Card 2 -->
-         <div class="card">
-           <div class="card-body">
-             <img class="service-icon" src="<?php echo get_template_directory_uri(); ?>/src/images/service-customization.png" alt="service-2" />
-             <h3>Customization</h3>
-             <p class="service-content">We offer tailored plugin, theme, and web application customization to elevate your presence.</p>
-             <div class="extra-content">
-               <h3 class="extra">Customization</h3>
-               <p class="extra-p service-content">We specialize in plugin, theme, and web application solution development.</p>
-               <ul class="service-list">
-                 <li>Plugin</li>
-                 <li>Web Application</li>
-                 <li>WordPress Theme</li>
-               </ul>
-               <div class="btn btn-large">
-                 <a href="#" class="nav-button">Learn More <i class="fas fa-circle default-icon"></i><i class="fas fa-arrow-right hover-icon"></i></a>
-               </div>
-             </div>
-           </div>
-         </div>
-     
-         <!-- Card 3 -->
-         <div class="card">
-           <div class="card-body">
-             <img class="service-icon" src="<?php echo get_template_directory_uri(); ?>/src/images/service-maintenance.png" alt="service-3" />
-             <h3>Maintenance & Security</h3>
-             <p class="service-content">We ensure seamless WordPress migrations and protection against vulnerabilities.</p>
-             <div class="extra-content">
-               <h3 class="extra">Maintenance & Security</h3>
-               <p class="extra-p service-content">We empower your brand with top-tier solutions.</p>
-               <ul class="service-list">
-                 <li>Maintenance</li>
-                 <li>Performance Troubleshooting</li>
-                 <li>Security Enhancements</li>
-               </ul>
-               <div class="btn btn-large">
-                 <a href="#" class="nav-button">Learn More <i class="fas fa-circle default-icon"></i><i class="fas fa-arrow-right hover-icon"></i></a>
-               </div>
-             </div>
-           </div>
-         </div>
-     
-         <!-- Card 4 -->
-         <div class="card">
-           <div class="card-body">
-             <img class="service-icon" src="<?php echo get_template_directory_uri(); ?>/src/images/integration.svg" alt="service-4" />
-             <h3>Integrations & Migrations</h3>
-             <p class="service-content">We bring AI-driven features to your WordPress site for automation and insights, 
-               along with seamless migrations and ongoing maintenance to keep your site secure and optimized.</p>
-             <div class="extra-content">
-               <h3 class="extra">Integrations & Migrations</h3>
-               <p class="extra-p service-content">Enhance WordPress with AI, Migrations, and ongoing maintenance</p>
-               <ul class="service-list">
-                 <li>AI Integrations </li>
-                 <li>Migrations</li>
-                 <li>Headless & Rest APIs</li>
-               </ul>
-               <div class="btn btn-large">
-                 <a href="#" class="nav-button">Learn More <i class="fas fa-circle default-icon"></i><i class="fas fa-arrow-right hover-icon"></i></a>
-               </div>
-             </div>
-           </div>
-         </div>
-     
-         <!-- Card 5 -->
-         <div class="card">
-           <div class="card-body">
-             <img class="service-icon" src="<?php echo get_template_directory_uri(); ?>/src/images/white.svg" alt="service-5" />
-             <h3>White Label Services</h3>
-             <p class="service-content">We enable you to offer high-quality development solutions under your own brand without managing the underlying processes.</p>
-             <div class="extra-content">
-               <h3 class="extra">White Label Services</h3>
-               <p class="extra-p service-content">We enable you to offer high-quality development solutions.</p>
-               <ul class="service-list">
-                 <li>Test Data Here</li>
-               </ul>
-               <div class="btn btn-large">
-                 <a href="#" class="nav-button">Learn More <i class="fas fa-circle default-icon"></i><i class="fas fa-arrow-right hover-icon"></i></a>
-               </div>
-             </div>
-           </div>
-         </div>
-     
-         <!-- Card 6 -->
-         <div class="card">
-           <div class="card-body">
-             <img class="service-icon" src="<?php echo get_template_directory_uri(); ?>/src/images/service-development.png" alt="service-1" />
-             <h3>Development</h3>
-             <p class="service-content">We specialize in plugin and theme development, as well as custom web application solutions.</p>
-             <div class="extra-content">
-               <h3 class="extra">Development</h3>
-               <p class="extra-p service-content">We specialize in plugin, theme, and web application solution development.</p>
-               <ul class="service-list">
-                 <li>Plugin</li>
-                 <li>Web Application</li>
-                 <li>WordPress Theme</li>
-               </ul>
-               <div class="btn btn-large">
-                 <a href="#" class="nav-button">Learn More <i class="fas fa-circle default-icon"></i><i class="fas fa-arrow-right hover-icon"></i></a>
-               </div>
-             </div>
-           </div>
-         </div>
-     
-       </div>
+    <?php
+    $args = array(
+        'post_type'      => 'services',
+        'posts_per_page' => -1
+    );
+    $services = new WP_Query($args);
+
+    if ($services->have_posts()) :
+        while ($services->have_posts()) : $services->the_post();
+
+            // Get ACF fields
+            $hover_title       = get_field('hover_title');
+            $hover_description = get_field('hover_description');
+            $hover_list_text   = get_field('hover_list');
+            $hover_list        = [];
+
+            if (!empty($hover_list_text) && is_string($hover_list_text)) {
+                $hover_list = preg_split('/\r\n|\r|\n/', $hover_list_text, -1, PREG_SPLIT_NO_EMPTY);
+                $hover_list = array_map('trim', $hover_list); 
+            }
+            ?>
+            <div class="card">
+                <div class="card-body">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <img class="service-icon" src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                    <?php endif; ?>
+
+                    <h3><?php the_title(); ?></h3>
+                    <p class="service-content"><?php the_content(); ?></p>
+
+                    <div class="extra-content">
+                        <?php if ($hover_title) : ?>
+                            <h3 class="extra"><?php echo esc_html($hover_title); ?></h3>
+                        <?php endif; ?>
+
+                        <?php if ($hover_description) : ?>
+                            <p class="extra-p service-content"><?php echo esc_html($hover_description); ?></p>
+                        <?php endif; ?>
+
+                        <?php if (!empty($hover_list)) : ?>
+                            <ul class="service-list">
+                                <?php foreach ($hover_list as $item) : ?>
+                                    <li><?php echo esc_html($item); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+
+                        <div class="btn btn-large">
+                            <a href="#" class="nav-button">
+                                Learn More
+                                <i class="fas fa-circle default-icon"></i>
+                                <i class="fas fa-arrow-right hover-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+        endwhile;
+        wp_reset_postdata();
+    else :
+        echo '<p>No services found.</p>';
+    endif;
+    ?>
+</div>
+
      
        <!-- Custom Arrows -->
        <div class="row">
@@ -201,62 +140,56 @@
  
      <!--Case Study-->
      <section class="container-fluid sec">
-       <h2>Case Studies</h2>
-     
-       <div class="case-studies-slider">
-         <!-- Card 1 -->
-         <div class="card-case container-hover">
-           <img src="<?php echo get_template_directory_uri(); ?>/src/images/case-1.png" class="card-img-top" alt="case-1">
-           <div class="hover-overlay">
-             <div class="hover-text">
-               <p>Enhance the App Design and Performance by integrating AI-Driven Plugins and increased transparency...</p>
-               <a href="#" class="btn btn-light mt-2"><i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial</a>
-             </div>
-           </div>
-           <img class="case-logo" src="<?php echo get_template_directory_uri(); ?>/src/images/Case-logo-1.png" alt="case-study-logo-1" />
-         </div>
-     
-         <!-- Card 2 -->
-         <div class="card-case container-hover">
-           <img src="<?php echo get_template_directory_uri(); ?>/src/images/case-2.png" class="card-img-top" alt="case-2">
-           <div class="hover-overlay">
-             <div class="hover-text">
-               <p>Enhance the App Design and Performance by integrating AI-Driven Plugins and increased transparency...</p>
-               <a href="#" class="btn btn-light mt-2"><i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial</a>
-             </div>
-           </div>
-           <img class="case-logo" src="<?php echo get_template_directory_uri(); ?>/src/images/Case-logo-2.png" alt="case-study-logo-2" />
-         </div>
-     
-     
-         <!-- Card 3 -->
-         <div class="card-case container-hover">
-           <img src="<?php echo get_template_directory_uri(); ?>/src/images/case-3.png" class="card-img-top" alt="case-3">
-           <div class="hover-overlay">
-             <div class="hover-text">
-               <p>Enhance the App Design and Performance by integrating AI-Driven Plugins and increased transparency...</p>
-               <a href="#" class="btn btn-light mt-2"><i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial</a>
-             </div>
-           </div>
-           <img class="case-logo" src="<?php echo get_template_directory_uri(); ?>/src/images/Case-logo-3.png" alt="case-study-logo-3" />
-         </div>
-            <!-- Card 4 -->
-       <div class="card-case container-hover">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/case-1.png" class="card-img-top" alt="case-1">
-         <div class="hover-overlay">
-           <div class="hover-text">
-             <p>Enhance the App Design and Performance by integrating AI-Driven Plugins and increased transparency...</p>
-             <a href="#" class="btn btn-light mt-2"><i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial</a>
-           </div>
-         </div>
-         <img class="case-logo" src="<?php echo get_template_directory_uri(); ?>/src/images/Case-logo-1.png" alt="case-study-logo-1" />
-       </div>
-        </div>
-       <div class="btn btn-secondary btn-case-study mt-4">
-         <a href="#" class="nav-button">View All Case Studies <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i></a>
-       </div>
-     </section>
-     
+  <h2>Case Studies</h2>
+
+  <div class="case-studies-slider">
+    <?php
+    $args = array(
+        'post_type' => 'case_study',
+        'posts_per_page' => -1
+    );
+    $case_query = new WP_Query($args);
+
+    if ($case_query->have_posts()) :
+        while ($case_query->have_posts()) : $case_query->the_post();
+            $logo = get_field('case_image', get_the_ID());
+            $hover_text = get_field('hover_description');
+            $testimonial_link = get_field('testimonial_link');
+            ?>
+            <div class="case-study-item"> 
+                <div class="card-case container-hover">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', ['class' => 'card-img-top', 'alt' => get_the_title()]); ?>
+                    <?php endif; ?>
+                    <div class="hover-overlay">
+                        <div class="hover-text">
+                            <p><?php echo esc_html($hover_text); ?></p>
+                            <?php if ($testimonial_link): ?>
+                                <a href="<?php echo esc_url($testimonial_link); ?>" class="btn btn-light mt-2">
+                                    <i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+                <?php if ($logo): ?>
+                    <img class="case-logo" src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" />
+                <?php endif; ?>
+            </div>
+        <?php endwhile;
+        wp_reset_postdata();
+    endif;
+    ?>
+</div>
+
+  <div class="btn btn-secondary btn-case-study mt-4">
+    <a href="<?php echo get_post_type_archive_link('case_study'); ?>" class="nav-button">
+      View All Case Studies <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i>
+    </a>
+  </div>
+</section>
+
+
  
  <!-- Problem Section -->
  <section class="container-fluid sec">
@@ -736,44 +669,39 @@
    </div>
  
    <div class="container mt-5">
-     <div class="blogs-slider">
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog1.svg" class="card-img-top" alt="Post 1" />
-         <h5 class="card-title mt-3">How to migrate from WebFlow to WordPress - Full Guide</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog2.svg" class="card-img-top" alt="Post 2" />
-         <h5 class="card-title mt-3">7 benefits of a static WordPress site</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog3.svg" class="card-img-top" alt="Post 3" />
-         <h5 class="card-title mt-3">WordPress Plugin Development Guide 2024</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog1.svg" class="card-img-top" alt="Post 4" />
-         <h5 class="card-title mt-3">How to use WordPress plugins for SEO optimization?</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog5.svg" class="card-img-top" alt="Post 5" />
-         <h5 class="card-title mt-3">How to use WordPress plugins for SEO optimization?</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog6.svg" class="card-img-top" alt="Post 6" />
-         <h5 class="card-title mt-3">How to use WordPress plugins for SEO optimization?</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog7.svg" class="card-img-top" alt="Post 7" />
-         <h5 class="card-title mt-3">How to use WordPress plugins for SEO optimization?</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog8.svg" class="card-img-top" alt="Post 8" />
-         <h5 class="card-title mt-3">How to use WordPress plugins for SEO optimization?</h5>
-       </div>
-       <div class="card">
-         <img src="<?php echo get_template_directory_uri(); ?>/src/images/blog1.svg" class="card-img-top" alt="Post 9" />
-         <h5 class="card-title mt-3">How to migrate from WebFlow to WordPress - Full Guide</h5>
-       </div>
-     </div>
+   <div class="blogs-slider">
+  <?php
+    $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => -1, 
+    );
+
+    $blog_query = new WP_Query($args);
+
+    if ($blog_query->have_posts()) :
+      while ($blog_query->have_posts()) : $blog_query->the_post();
+        $image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'medium') : get_template_directory_uri() . '/src/images/blog1.svg';
+  ?>
+        <div class="d-flex flex-column">
+        <div class="card blog">
+          <img src="<?php echo esc_url($image); ?>" class="card-img-blog" alt="<?php the_title_attribute(); ?>" />
+        </div>
+        <h5 class="card-title mt-3">
+        <a href="<?php the_permalink(); ?>">
+          <?php echo wp_trim_words(get_the_title(), 12, '...'); ?>
+        </a>
+      </h5>
+
+    </div>
+  <?php
+      endwhile;
+      wp_reset_postdata();
+    else :
+      echo '<p>No blog posts found.</p>';
+    endif;
+  ?>
+</div>
+
    </div>
  </section>
 

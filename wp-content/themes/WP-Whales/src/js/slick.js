@@ -37,11 +37,11 @@ $(function() {
   });
 
   $('#customPrev').on('click', function() {
-    $(' .slick-services').slick('slickPrev');
+    $('.slick-services').slick('slickPrev');
   });
 
   $('#customNext').on('click', function() {
-    $(' .slick-services').slick('slickNext');
+    $('.slick-services').slick('slickNext');
   });
 /* /blogs slider */
   var $slider = $('.blogs-slider');

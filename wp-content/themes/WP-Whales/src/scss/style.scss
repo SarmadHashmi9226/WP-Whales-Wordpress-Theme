@@ -84,9 +84,7 @@ h3 {
 p {
   font-size: 1.125rem;
 }
-.case-studies-slider .slick-slide {
-  height: auto !important;
-}
+
 
 .case-studies-slider .hover-text {
   display: flex;
@@ -364,17 +362,17 @@ p {
 /* Services */
 
 .service-icon {
-  width: 35%;
+  width: 30%;
   margin-top: 0.5rem;
   padding-bottom: 2rem;
 }
 .slick-services .card {
-  margin: 0 10px 0 0; /* Adjust 10px to whatever gap you want */
+  margin: 0 10px 0 0; 
+  height: 400px !important;
+
 }
 
-.service-icon-integration {
-  width: 27%;
-}
+
 .card-body{
   flex-shrink: 0;  
 }
@@ -439,14 +437,25 @@ p {
   display: flex;
   gap: 1.5rem;
 }
+.card-case {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+ .card-case img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover  ; /* Or use 'contain' if needed */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
 .case-studies-slider .slick-slide {
   padding: 0 10px 0 0; /* Adjust gap as needed */
   box-sizing: border-box;
-}
-
-.case-img {
-  max-width: 520px;
-  border-radius: 1rem;
+  height: 400px !important;
 }
 
 .case-study-container {
@@ -455,9 +464,19 @@ p {
   gap: 1rem;
 }
 
-.case-logo {
-  max-width: 93px;
+.case-study-item {
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;    /* center horizontally */
+  margin-bottom: 40px;    /* spacing between items */
 }
+
+.case-logo {
+  margin-top: 10px;
+  max-width: 150px;
+  height: auto;
+}
+
 
 /* Problems */
 
@@ -665,9 +684,6 @@ padding-bottom: 2rem;
   align-items: center;
   justify-content: center;
 }
-.case-logo{
-  max-height: 70px;
-}
 .container-hover {
   position: relative;
   display: inline-block;
@@ -677,24 +693,24 @@ padding-bottom: 2rem;
 .card-img-top {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 
 
 .hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    width: 416px;
-    height: 300px;
-    color: #fff;
-    background-color: rgba(114, 109, 109, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 16px;
-    cursor: pointer;
-    padding: 25px;
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  width: 387px;
+  height: 301px;
+  color: #fff;
+  background-color: rgba(114, 109, 109, .5);
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 16px;
+  cursor: pointer;
+  padding: 25px;
 }
 .hover-overlay .hover-text p{
   padding-top: 100px;
@@ -988,6 +1004,7 @@ padding-bottom: 2rem;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
+    cursor: e-resize;
   }
     .coffee{
       font-family: v.$font-inter;
@@ -1101,7 +1118,13 @@ padding-bottom: 2rem;
   background-color: #ffffff;
   margin: 0 5px;
 }
-
+.blog{
+  height: 225px !important;
+}
+.card-title a{
+  text-decoration: none;
+  color: #000000;
+} 
 /* Footer */
 .footer-sec{
   background-color: #222222;

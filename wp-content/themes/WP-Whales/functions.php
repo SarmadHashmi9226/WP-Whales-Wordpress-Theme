@@ -18,5 +18,9 @@ function wp_whales_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'wp_whales_enqueue_assets');
 
+// Theme supposrt for thumbnails
 
+add_theme_support( 'post-thumbnails' );
 
+require_once get_template_directory() . '/includes/service-post-type.php';
+require_once get_template_directory() . '/includes/case-study-post-type.php';
