@@ -872,14 +872,14 @@ padding-bottom: 2rem;
     padding: 0 !important;
   }
   .card-buzz{
-    width: 100%;
+  width: 100%;
+  height: fit-content;
   border-radius: 1rem;
   padding: 2rem;
   background-color: #f7f7f7;
   color: #222222;
   border: 1px solid #dddddd;
-  margin-top: 40px;
-   display: flex;
+  display: flex;
   flex-wrap: wrap;
   }
   .buzz-content{
@@ -907,40 +907,40 @@ padding-bottom: 2rem;
     margin-top: 2rem;
   }
   .step-indicator {
-    position: relative;
+    margin-top: 15px;
     display: flex;
-    justify-content: space-between;
-    max-width: 300px;
-    margin: 4rem auto;
-    font-size: 1.25rem;
-    left: 14em;
-    }
-
-    .step {
-      color: #999;
-      font-weight: normal;
-      position: relative;
-      cursor: pointer;
-      font-size: 14px;
-      color: #757575;
-      margin: 0 26px; 
-      padding: 0
-    }
-
-    .step.active {
-      color: black;
-      font-weight: bold;
-    }
-
-    .step-bar {
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+    user-select: none;
+  }
+  
+  .step {
+    font-family: v.$font-inter;
+    width: 30px;
+    height: 30px;
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .step-bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ee4e34; /* or your active color */
     position: absolute;
-    bottom: -2px;
-    left: 12px;
-    height: 4px;
-    background-color: red;
-    transition: all 0.3s ease-in-out;
-    width: 12%;
-    }
+    bottom: -6px;
+    left: 0;
+  }
+  .step.active {
+    color: #000000;
+  }
+  
+  
     .project-title{
       font-family: v.$font-mona;
       font-size: 32px;
@@ -1121,6 +1121,9 @@ padding-bottom: 2rem;
 .blog{
   height: 225px !important;
 }
+.blogs{
+  height: fit-content !important;
+}
 .card-title a{
   text-decoration: none;
   color: #000000;
@@ -1187,30 +1190,29 @@ background: transparent;
   font-weight: 500;
   color: #ffffff;
 }
-.company-li{
+.small a{
   font-family: v.$font-inter;
   font-size: 15px;
   color: #ffffff;
   position: relative;
- 
+  text-decoration: none;
 }
-.company-li img {
+.small img {
   transition: opacity 0.2s ease;
 }
-.company-li:hover{
+.small a:hover{
   color: #ee4e34;
-  cursor: default !important;
+  cursor: pointer;
 }
-.company-li i{
+.small i{
   opacity: 0;
 }
-.company-li:hover i{
+.small a:hover i{
 opacity: 1;
-// transition: opacity 0.2s ease;
 padding: 0!important;
 
 }
-.company-li:hover img{
+.small a:hover img{
 opacity: 0;
 }
 .fa-arrow-right{

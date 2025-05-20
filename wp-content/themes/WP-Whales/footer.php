@@ -4,7 +4,7 @@
  */
 ?>
 <footer class="container-fluid footer-sec ">
- <div class="row gy-4">
+ <div class="row">
       
       <!-- Newsletter Section -->
       <div class="col-md-4 ">
@@ -58,39 +58,49 @@
         </div>
       </div>
 
-      <!-- Company -->
-      <div class="col-md-3">
-        <p class=" mb-3 company ms-5">Company</p>
-        <ul class="list-unstyled small ms-5">
-          <li class="mb-2 company-li">Home  <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">Partnerships  <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">About Us  <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-        </ul>
-      </div>
+     <!-- Company -->
+<div class="col-md-3">
+  <p class="mb-3 company ms-5">Company</p>
+  <?php
+    wp_nav_menu([
+      'theme_location' => 'footer_company',
+      'container' => false,
+      'menu_class' => 'list-unstyled small ms-5',
+      'link_before' => '', 
+      'link_after' => ' <img src="' . get_template_directory_uri() . '/src/images/arrow-up-right.svg" alt="arrow" /><i class="fa-solid fa-arrow-right"></i>',
+      'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+    ]);
+  ?>
+</div>
 
-      <!-- Services -->
-      <div class="col-md-3">
-        <h6 class=" mb-3 company">Services</h6>
-        <ul class="list-unstyled small">
-          <li class="mb-2 company-li">WordPress Web Development <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i> </li>
-          <li class="mb-2 company-li">Custom Web Development <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">Web Design <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">MVP Development <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">CRM Development <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">Digital Transformation <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">QA Testing and Automation <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-        </ul>
-      </div>
+<!-- Services -->
+<div class="col-md-3">
+  <h6 class="mb-3 company">Services</h6>
+  <?php
+    wp_nav_menu([
+      'theme_location' => 'footer_services',
+      'container' => false,
+      'menu_class' => 'list-unstyled small',
+      'link_after' => ' <img src="' . get_template_directory_uri() . '/src/images/arrow-up-right.svg" alt="arrow" /><i class="fa-solid fa-arrow-right"></i>',
+      'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+    ]);
+  ?>
+</div>
 
-      <!-- Resources -->
-      <div class="col-md-2">
-        <h6 class="company mb-3">Resources</h6>
-        <ul class="list-unstyled small">
-          <li class="mb-2 company-li">Projects <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-          <li class="mb-2 company-li">Blogs <img src="<?php echo get_template_directory_uri(); ?>/src/images/arrow-up-right.svg" alt="arrow"/><i class="fa-solid fa-arrow-right"></i></li>
-        </ul>
-      </div>
-    </div>
+<!-- Resources -->
+<div class="col-md-2">
+  <h6 class="company mb-3">Resources</h6>
+  <?php
+    wp_nav_menu([
+      'theme_location' => 'footer_resources',
+      'container' => false,
+      'menu_class' => 'list-unstyled small',
+      'link_after' => ' <img src="' . get_template_directory_uri() . '/src/images/arrow-up-right.svg" alt="arrow" /><i class="fa-solid fa-arrow-right"></i>',
+      'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+    ]);
+  ?>
+</div>
+
 
     <!-- Footer Bottom -->
     <div class="text-center mt-4  small copyright-footer">

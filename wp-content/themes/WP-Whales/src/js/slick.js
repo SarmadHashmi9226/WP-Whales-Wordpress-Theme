@@ -66,3 +66,43 @@ $(function() {
     $slider.slick('slickNext');
   });
 });
+
+var $testimonialSlider = $('.testimonial-slider');
+
+$testimonialSlider.slick({
+  arrows: false,
+  dots: false,
+  infinite: true,
+  speed: 500,
+  fade: false,
+  cssEase: 'linear',
+});
+
+var slideCount = $testimonialSlider.slick('getSlick').slideCount;
+var $stepIndicator = $('.step-indicator');
+$stepIndicator.empty();
+
+for (let i = 0; i < slideCount; i++) {
+  const stepNumber = i + 1;
+  const stepDiv = $('<div>', { class: 'step', text: stepNumber });
+  if (i === 0) stepDiv.addClass('active');
+  $stepIndicator.append(stepDiv);
+}
+
+function updateStepBar() {
+  $stepIndicator.find('.step-bar').remove(); // Remove any existing bars
+  $stepIndicator.find('.step.active').append('<div class="step-bar"></div>');
+}
+
+updateStepBar();
+
+$stepIndicator.on('click', '.step', function() {
+  var index = $(this).index();
+  $testimonialSlider.slick('slickGoTo', index);
+});
+
+$testimonialSlider.on('afterChange', function(event, slick, currentSlide) {
+  $stepIndicator.find('.step').removeClass('active');
+  $stepIndicator.find('.step').eq(currentSlide).addClass('active');
+  updateStepBar();
+});

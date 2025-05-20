@@ -335,71 +335,55 @@
          </div>
      </section>
      <!--Engagement Model Small-->
-     <section  class="container-fluid sec">
-   <div class="row">
-       <h2 class="enagage-title">Engagement Models</h2>
-   </div>
-      <div class="my-2"> 
-         <div class="row g-2"> 
-             <div class="col-sm-6 col-md-4"> 
-                 <div class="card-model">
-                   <div class="card-body-model">
-                     <img
-                           class="engagement-icon"
-                           src="<?php echo get_template_directory_uri(); ?>/src/images/fixed-price1.svg"
-                           alt="service-1"
-                         />
-                         <h3>Fixed Price</h3>
-                         <p>
-                           A set price for the project based on agreed requirements, providing clear costs and deliverables for transparency.
- 
-                         </p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-sm-6 col-md-4">
-                 <div class="card-model">
-                   <div class="card-body-model">
-                      <img
-             class="engagement-icon"
-             src="<?php echo get_template_directory_uri(); ?>/src/images/dedicated2.svg"
-             alt="service-1"
-           />
-           <h3>Dedicated Teams</h3>
-           <p>
-             A focused team working exclusively on your project for a set period, enabling deeper collaboration, faster turnaround, and a stronger alignment with your long-term goals.
- 
-           </p>
-                     </div>
-                 </div>
-             </div>
-             <div class="col-sm-6 col-md-4">
-                 <div class="card-model">
-                     <div class="card-body-model">
- 
-                         <img
-                         class="engagement-icon"
-                         src="<?php echo get_template_directory_uri(); ?>/src/images/flexible3.svg"
-                         alt="service-1"
-                       />
-                       <h3>Flexible Engagement</h3>
-                       <p>
-                         Adapts to changing project requirements, with costs based on actual time and resources used, allowing for ongoing development
- 
-                       </p>
-          
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
- <div class="btn btn-engagement-model mt-4">
-           <a href="#" class="nav-button"
-             >Engage to Create Something Amazing <i class="fas fa-circle default-icon"></i>
-           <i class="fas fa-arrow-right hover-icon"></i></a>
-         </div>
- </section>
+     <section class="container-fluid sec">
+  <div class="row">
+    <h2 class="enagage-title">Engagement Models</h2>
+  </div>
+  <div class="my-2"> 
+    <div class="row g-2"> 
+      <?php
+        $args = [
+          'post_type' => 'engagement_model',
+          'posts_per_page' => 3,
+        ];
+        $query = new WP_Query($args);
+        if ($query->have_posts()):
+          while ($query->have_posts()): $query->the_post();
+      ?>
+        <div class="col-sm-6 col-md-4"> 
+          <div class="card-model">
+            <div class="card-body-model">
+              <?php if (has_post_thumbnail()): ?>
+                <img
+                  class="engagement-icon"
+                  src="<?php echo get_the_post_thumbnail_url(); ?>"
+                  alt="<?php the_title_attribute(); ?>"
+                />
+              <?php endif; ?>
+              <h3><?php the_title(); ?></h3>
+              <p><?php the_content(); ?></p>
+            </div>
+          </div>
+        </div>
+      <?php
+          endwhile;
+          wp_reset_postdata();
+        else:
+      ?>
+        <p>No engagement models found.</p>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <div class="btn btn-engagement-model mt-4">
+    <a href="#" class="nav-button">
+      Engage to Create Something Amazing
+      <i class="fas fa-circle default-icon"></i>
+      <i class="fas fa-arrow-right hover-icon"></i>
+    </a>
+  </div>
+</section>
+
      <!--Why Us-->
  <section class="container-fluid sec">
      <div class="row">
@@ -472,116 +456,114 @@
  </section>
      <!--Buzz-->
  
- <section class="container-fluid sec">
-   <div class=" mb-4 buzz-info" >
-     <h2 class="buzz-title ">The buzz is real!</h2>
-     <p class="text-muted buzz-sub-title">Here’s what our clients are saying about us</p>
-   </div>
-   <div class="card-buzz d-flex">
-     <div class=" buzz-content">
-       <img src="<?php echo get_template_directory_uri(); ?>/src/images/buzz.svg" class="img-fluid mb-3" alt="Buzz Person" />
-       <p class="buzz-name mb-1">Christian Yavorsky</p>
-       <p class="text-muted buzz-designation mb-0">CO-FOUNDER & CHIEF SCIENTIFIC OFFICER</p>
-     </div>
-     <div class="col-md-8 buzz-text">
-       <div class="d-flex">
-     <img class="buzz-quote me-3" src="<?php echo get_template_directory_uri(); ?>/src/images/buzz-quote.svg" alt="buzz-quote">
-     <div>
-     <p class="buzz-quote-text">
-       They genuinely care about our product and consistently demonstrate a commitment to quality.
-        Instead of merely finishing tasks quickly, they take the time to offer valuable suggestions for improvements. 
-        Their proactive approach not only enhances our project but also reflects their dedication to our success. 
-       It’s refreshing to work with a team that prioritizes excellence and collaboration. I truly appreciate their efforts!
-       </p>
-       </div>
-     </div>
-   <div class="step-indicator">
-   <div class="step active">1</div>
-   <div class="step">2</div>
-   <div class="step">3</div>
-   <div class="step">4</div>
-   <div class="step">5</div>
-   <div class="step-bar"></div>
-     </div>
-   </div>
- </div>
- </section>
+     <?php
+$args = [
+    'post_type' => 'testimonial',
+    'posts_per_page' => -1,
+    'orderby' => 'date',
+    'order' => 'DESC',
+];
+$query = new WP_Query($args);
+
+if ($query->have_posts()) : ?>
+  <section class="container-fluid sec">
+    <div class="mb-4 buzz-info">
+      <h2 class="buzz-title">The buzz is real!</h2>
+      <p class="text-muted buzz-sub-title">Here’s what our clients are saying about us</p>
+    </div>
+
+    <div class="testimonial-slider">
+      <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <div class="card-buzz d-flex">
+          <div class="buzz-content">
+            <?php if (has_post_thumbnail()) : ?>
+              <?php the_post_thumbnail('thumbnail', ['class' => 'img-fluid mb-3', 'alt' => get_the_title()]); ?>
+            <?php else: ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/src/images/buzz.svg" class="img-fluid mb-3" alt="Default Buzz Person" />
+            <?php endif; ?>
+            <p class="buzz-name mb-1"><?php the_title(); ?></p>
+            <p class="text-muted buzz-designation mb-0"><?php echo esc_html(get_field('client_designation')); ?></p>
+          </div>
+          <div class="col-md-8 buzz-text">
+            <div class="d-flex">
+              <img class="buzz-quote me-3" src="<?php echo get_template_directory_uri(); ?>/src/images/buzz-quote.svg" alt="buzz-quote" />
+              <div>
+                <p class="buzz-quote-text"><?php echo esc_html(get_field('content')); ?></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endwhile; ?>
+    </div>
+    <div class="step-indicator"></div>
+
+  </section>
+
+<?php
+wp_reset_postdata();
+endif;
+?>
+
  <!-- Our Pojects-->
  <section class="container-fluid sec">
-    <div class="d-flex">
-     <div class="col-lg-6 col-md-6 col-sm-12 mb-4 project-info">
-       <p class="project-title">Our Projects</p>
-     </div>
-     <div class="col-lg-6 col-md-6 col-sm-12 mb-4 ms-2">
-       <div class="btn btn-learn">
-         <a href="#" class="nav-button">
-           View Projects
-           <i class="fas fa-circle default-icon ms-2"></i>
-           <i class="fas fa-arrow-right hover-icon"></i>
-         </a>
-       </div>
-     </div>
-     </div>
-       <div class="row g-2">
-         <!-- Start Card -->
-         <div class="col-sm-6 col-md-4">
-           <div class="card-project">
-             <div class="card-body-project">
-               <img src="<?php echo get_template_directory_uri(); ?>/src/images/background-project.svg" alt="bg" />
-               <div class="foreground-image">
-                 <img src="<?php echo get_template_directory_uri(); ?>/src/images/project.svg" alt="fg" />
-               </div>
-               <div class="slider-handle"><div class="slider-dot"></div></div>
-             </div>
-           </div>
-           <p class="coffee mt-3">Coffee Beans</p>
-           <p class="coffee-text mt-2">
-             Caribbean Airlines provides a genuine Caribbean experience on all its services.
-             It operates more than 600 weekly flights to destinations...
-           </p>
-         </div>
-         <!-- Duplicate for Card 2 -->
-         <div class="col-sm-6 col-md-4">
-           <div class="card-project">
-             <div class="card-body-project">
-               <img src="<?php echo get_template_directory_uri(); ?>/src/images/background-project.svg" alt="bg" />
-               <div class="foreground-image">
-                 <img src="<?php echo get_template_directory_uri(); ?>/src/images/project.svg" alt="fg" />
-               </div>
-               <div class="slider-handle"><div class="slider-dot"></div></div>
-             </div>
-           </div>
-           <p class="coffee mt-3">Coffee Beans</p>
-           <p class="coffee-text mb-2">
-             Caribbean Airlines provides a genuine Caribbean experience on all its services.
-             It operates more than 600 weekly flights to destinations...
-           </p>
-         </div>
-         <!-- Duplicate for Card 3 -->
-         <div class="col-sm-6 col-md-4">
-           <div class="card-project">
-             <div class="card-body-project">
-               <img src="<?php echo get_template_directory_uri(); ?>/src/images/background-project.svg" alt="bg" />
-               <div class="foreground-image">
-                 <img src="<?php echo get_template_directory_uri(); ?>/src/images/project.svg" alt="fg" />
-               </div>
-               <div class="slider-handle"><div class="slider-dot"></div></div>
-             </div>
-           </div>
-           <p class="coffee mt-3">Coffee Beans</p>
-           <p class="coffee-text mb-2">
-             Caribbean Airlines provides a genuine Caribbean experience on all its services.
-             It operates more than 600 weekly flights to destinations...
-           </p>
-         </div>
-       </div>
- </section>
+  <div class="d-flex">
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 project-info">
+      <p class="project-title">Our Projects</p>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 mb-4 ms-2">
+      <div class="btn btn-learn">
+        <a href="#" class="nav-button">
+          View Projects
+          <i class="fas fa-circle default-icon ms-2"></i>
+          <i class="fas fa-arrow-right hover-icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-2">
+    <?php
+    $projects = new WP_Query([
+      'post_type' => 'project',
+      'posts_per_page' => 3,
+    ]);
+
+    if ($projects->have_posts()):
+      while ($projects->have_posts()): $projects->the_post();
+        $bg_img = get_field('background_image');
+        $fg_img = get_field('foreground_image');
+    ?>
+      <div class="col-sm-6 col-md-4">
+        <div class="card-project">
+          <div class="card-body-project">
+            <?php if ($bg_img): ?>
+              <img src="<?php echo esc_url($bg_img); ?>" alt="bg" />
+            <?php endif; ?>
+            <div class="foreground-image">
+              <?php if ($fg_img): ?>
+                <img src="<?php echo esc_url($fg_img); ?>" alt="fg" />
+              <?php endif; ?>
+            </div>
+            <div class="slider-handle"><div class="slider-dot"></div></div>
+          </div>
+        </div>
+        <p class="coffee mt-3"><?php the_title(); ?></p>
+        <p class="coffee-text mt-2"><?php the_excerpt(); ?></p>
+      </div>
+    <?php
+      endwhile;
+      wp_reset_postdata();
+    else:
+    ?>
+      <p>No projects found.</p>
+    <?php endif; ?>
+  </div>
+</section>
+
  
      <!--Reviews-->
    <section class="container-fluid sec">
-     <div class="row">
         <p class="reviews">Starts Speaks for Us</p>
-     </div>
      <div class="row mt-3">
        <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="card review">
@@ -682,7 +664,7 @@
       while ($blog_query->have_posts()) : $blog_query->the_post();
         $image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'medium') : get_template_directory_uri() . '/src/images/blog1.svg';
   ?>
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column blogs">
         <div class="card blog">
           <img src="<?php echo esc_url($image); ?>" class="card-img-blog" alt="<?php the_title_attribute(); ?>" />
         </div>
