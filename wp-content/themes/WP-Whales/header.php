@@ -36,7 +36,7 @@
             </li>
   
             <li class="nav-item dropdown position-static">
-              <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="<?php echo get_permalink( get_page_by_path( 'services' ) ); ?>" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="<?php echo get_permalink( get_page_by_path( 'our-services' ) ); ?>" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
   

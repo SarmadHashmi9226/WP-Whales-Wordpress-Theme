@@ -43,3 +43,4 @@ require_once get_template_directory() . '/includes/case-study-post-type.php';
 require_once get_template_directory() . '/includes/engagement-model-post-type.php';
 require_once get_template_directory() . '/includes/project-post-type.php';
 require_once get_template_directory() . '/includes/testimonial-post-type.php';
+require_once get_template_directory() . '/includes/tech-stack-post-type.php';

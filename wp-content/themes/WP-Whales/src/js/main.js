@@ -2,6 +2,7 @@
 import '../js/slide.js';
 import '../js/sidebar.js';
 import '../js/slick.js';
+import '../js/service.js';
 // Load Bootstrap init
 import {initBootstrap} from "./bootstrap.js";
 

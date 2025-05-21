@@ -6,6 +6,8 @@
  get_header();
  
  ?>
+
+
  <!--Header cover-->
  <section class ="container-fluid main-header sec">
        <h1 class="main-header-title">
