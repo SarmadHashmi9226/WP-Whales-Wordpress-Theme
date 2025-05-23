@@ -126,120 +126,104 @@
     </div>
 
     <!-- Why We Best?-->
+    <?php $mvp_best_page = get_page_by_path('services-best-company'); ?>
     <section class="container-fluid sec mt-5">
-      <div class="col-10">
-        <h2 class="overview-project">Why WP Whales is the Best MVP Development Company</h2>
-        <p class="overview-text">At WP Whales we have proven ourselves as a top MVP development company by continuously offering significant results. 
-          Our group of experts combines technical skills with a solid understanding of market trends to guarantee that your MVP is in sync with your business's ambitions and client needs.
-          <br>You wonder Why are we special, here's why:</p>
-          <div class="container">
-            <div class="row">
-              <div class="col-sm mt-5 d-flex flex-column align-items-center text-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/mvp-1.svg" alt="img">
-                <p class="mvp-subtitle mt-2">Customer Focused</p>
-                <p class="mvp-content">We view your success as our own, concentrating on what you need most.</p>
-              </div>
-              <div class="col-sm mt-5 d-flex flex-column align-items-center text-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/mvp-2.svg" alt="img">
-                <p class="mvp-subtitle mt-2">Tested Expertise</p>
-                <p class="mvp-content">Our team has years of experience in MVP consulting, special MVP solutions and bespoke MVP development services.</p>
-              </div>
-              <div class="col-sm mt-5 d-flex flex-column align-items-center text-center">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/mvp-3.svg" alt="img">
-                <p class="mvp-subtitle mt-2">Speed and Accuracy</p>
-                <p class="mvp-content">We strike a balance between efficiency and quality, delivering exceptional MVPs on time and within budget.</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 mt-5 d-flex flex-row g-2">
-                <div class="card-mvp me-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/mvp-4.svg" alt="img">
-                    <span class="mvp-subtitle-2 ms-1">Customer Focused</span>
-                <p class="mvp-content ms-5">We view your success as our own, concentrating on what you need most.</p>
-                </div>
-              </div>
-              <div class="col-md-4 mt-5 d-flex flex-row g-1">
-                <div class="card-mvp me-4">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/mvp-4.svg" alt="img">
-                    <span class="mvp-subtitle-2 ms-1">Tested Expertise</span>
-                <p class="mvp-content ms-5">Our team has years of experience in MVP consulting, special MVP solutions and bespoke MVP development services.</p>
-                </div>
-              </div>
-              <div class="col-md-4 mt-5 d-flex flex-row g-2">
-                <div class="card-mvp ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/mvp-4.svg" alt="img">
-                    <span class="mvp-subtitle-2 ms-1">Speed and Accuracy</span>
-                <p class="mvp-content ms-5">We strike a balance between efficiency and quality, delivering exceptional MVPs on time and within budget.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container-fluid black mt-5">
-              <div class="row">
-                <p class="black-content">By choosing us you are teaming with specialists who are committed to turning your concept into a believable, competitive product. </p>
-                <div class="btn ms-4 d-flex flex-start mt-3">
-                  <a href="#" class="nav-button"
-                    >Get in touch now <i class="fas fa-circle default-icon"></i>
-                    <i class="fas fa-arrow-right hover-icon"></i></a>
-                </div>
-              </div>
-          </div>
-      </div>
-    </section>
+  <div class="col-10">
+    <h2 class="overview-project"><?php the_field('mvp_why_heading',$mvp_best_page->ID); ?></h2>
+    <p class="overview-text"><?php the_field('mvp_why_description',$mvp_best_page->ID); ?></p>
 
-    <!-- Development Process -->
-    <section class="container-fluid sec">
-      <div class="col-md-10">
-        <h2 class="overview-project">Our Comprehensive MVP Development Process</h2>
-        <p class="overview-text">A successful MVP creation is a blend of creativity, strategy and technology. 
-          Over the years we have refined our MVP development process to consistently deliver superior results.
-        </p>
-        <div class="container my-5">
-          <!-- Feature Item -->
-          <div class="row feature-item">
-            <div class="col-auto">
-              <img src="<?php echo get_template_directory_uri(); ?>/src/images/process-1.svg" alt="Market Research Icon" class="feature-icon">
-            </div>
-            <div class="col">
-              <h6 class="process-title">Market Research and Analysis</h6>
-              <p class="process-content mb-0">We perform deep studies on industry trends and customer behavior to guarantee that your MVP reaches its target audience.</p>
-            </div>
-          </div>
-      
-          <div class="row feature-item">
-            <div class="col-auto">
-              <img src="<?php echo get_template_directory_uri(); ?>/src/images/process-2.svg" alt="Feature Prioritizing Icon" class="feature-icon">
-            </div>
-            <div class="col">
-              <h6 class="process-title">Feature Prioritizing</h6>
-              <p class="process-content mb-0">By focusing on key abilities, we reduce production time and costs while delivering a product that your consumers will enjoy.</p>
-            </div>
-          </div>
-      
-          <div class="row feature-item">
-            <div class="col-auto">
-              <img src="<?php echo get_template_directory_uri(); ?>/src/images/process-3.svg" alt="Continuous Growth Icon" class="feature-icon">
-            </div>
-            <div class="col">
-              <h6 class="process-title">Continuous Growth</h6>
-              <p class="process-content mb-0">We use agile principles to adapt to different opinions and regularly strengthen the item while ensuring that it meets customer demands.</p>
-            </div>
-          </div>
-      
-          <div class="row feature-item">
-            <div class="col-auto">
-              <img src="<?php echo get_template_directory_uri(); ?>/src/images/process-4.svg" alt="Ongoing Support Icon" class="feature-icon">
-            </div>
-            <div class="col">
-              <h6 class="process-title">Ongoing Support</h6>
-              <p class="process-content mb-0">Our assistance never ends with the launch. We offer further guidance to help you improve your product for success.</p>
-            </div>
-            <p class="process-line mt-5">With this approach we have helped many companies bring their <span style="color: #ee4c2b;">ideas to fruition.</span>  
-          </p>
+    <div class="container">
+      <div class="row">
+        <?php for ($i = 1; $i <= 3; $i++) :
+          $img = get_field("mvp_top_{$i}_img",$mvp_best_page->ID);
+          $title = get_field("mvp_top_{$i}_title",$mvp_best_page->ID);
+          $content = get_field("mvp_top_{$i}_content",$mvp_best_page->ID);
+        ?>
+        <div class="col-sm mt-5 d-flex flex-column align-items-center text-center">
+          <?php if ($img): ?>
+            <img src="<?php echo esc_url($img['url']); ?>" alt="img">
+          <?php endif; ?>
+          <p class="mvp-subtitle mt-2"><?php echo esc_html($title); ?></p>
+          <p class="mvp-content"><?php echo esc_html($content); ?></p>
+        </div>
+        <?php endfor; ?>
+      </div>
+
+      <div class="row">
+        <?php for ($i = 1; $i <= 3; $i++) :
+          $img = get_field("mvp_card_{$i}_img",$mvp_best_page->ID);
+          $title = get_field("mvp_card_{$i}_title",$mvp_best_page->ID);
+          $content = get_field("mvp_card_{$i}_content",$mvp_best_page->ID);
+        ?>
+        <div class="col-md-4 mt-5 d-flex flex-row g-2">
+          <div class="card-mvp me-4">
+            <?php if ($img): ?>
+              <img src="<?php echo esc_url($img['url']); ?>" alt="img">
+            <?php endif; ?>
+            <span class="mvp-subtitle-2 ms-1"><?php echo esc_html($title); ?></span>
+            <p class="mvp-content ms-5"><?php echo esc_html($content); ?></p>
           </div>
         </div>
+        <?php endfor; ?>
       </div>
-    </section>
+    </div>
+
+    <div class="container-fluid black mt-5">
+      <div class="row">
+        <p class="black-content">By choosing us you are teaming with specialists who are committed to turning your concept into a believable, competitive product. </p>
+        <div class="btn ms-4 d-flex flex-start mt-3">
+          <a href="#" class="nav-button">
+            Get in touch now <i class="fas fa-circle default-icon"></i>
+            <i class="fas fa-arrow-right hover-icon"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Development Process -->
+    <?php $mvp_process_page = get_page_by_path('mvp-development-process'); ?>
+    <section class="container-fluid sec">
+  <div class="col-md-10">
+    <h2 class="overview-project"><?php the_field('mvp_section_title',$mvp_process_page->ID); ?></h2>
+    <p class="overview-text"><?php the_field('mvp_section_description',$mvp_process_page->ID); ?></p>
+
+    <div class="container my-5">
+
+      <?php
+      // Loop through each step (1 to 4)
+      for ($i = 1; $i <= 4; $i++) :
+        $icon = get_field("mvp_step_{$i}_icon",$mvp_process_page->ID);
+        $title = get_field("mvp_step_{$i}_title",$mvp_process_page->ID);
+        $desc = get_field("mvp_step_{$i}_description",$mvp_process_page->ID);
+
+        if ($title && $desc) :
+      ?>
+      <div class="row feature-item">
+        <div class="col-auto">
+          <?php if ($icon): ?>
+            <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($title); ?>" class="feature-icon">
+          <?php endif; ?>
+        </div>
+        <div class="col">
+          <h6 class="process-title"><?php echo esc_html($title); ?></h6>
+          <p class="process-content mb-0"><?php echo esc_html($desc); ?></p>
+
+          <?php if ($i == 4): ?>
+            <p class="process-line mt-5"><?php the_field('mvp_section_conclusion',$mvp_process_page->ID); ?></p>
+          <?php endif; ?>
+        </div>
+      </div>
+      <?php
+        endif;
+      endfor;
+      ?>
+
+    </div>
+  </div>
+</section>
+
 
     <!--Discussion cover-->
     <section class="container-fluid sec">
@@ -260,94 +244,76 @@
     </section>
 
     <!-- Benefits -->
+     <?php
+    $benefits_page = get_page_by_path('services-benefits');
+    ?>
     <section class="container-fluid sec">
-      <div class="col-md-10">
-        <h2 class="overview-project">Key Benefits of choosing our services</h2>
-        <p class="overview-text">A successful MVP creation is a blend of creativity, strategy and technology. Over the years we have refined our MVP development process to consistently deliver superior results.
-        </p>
-        <div class="d-flex mt-5">
-          <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
-          <h6 class="process-title ms-3">Budget Friendly</h6>
-        </div>
-        <p class="process-content mb-0">We help companies reach their objectives without breaking the bank.</p>
+  <div class="col-md-10">
+    <h2 class="overview-project"><?php the_field('section_title',$benefits_page->ID); ?></h2>
+    <p class="overview-text"><?php the_field('section_description',$benefits_page->ID); ?></p>
 
-        <div class="d-flex mt-4">
-          <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
-          <h6 class="process-title ms-3">Speed to Market</h6>
-        </div>
-        <p class="process-content mb-0">Our flexible procedures ensure that your MVP is ready to launch in the blink of an eye.</p>
-
-        <div class="d-flex mt-4">
-          <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
-          <h6 class="process-title ms-3">Robust Structures</h6>
-        </div>
-        <p class="process-content mb-0">We create MVP with adaptability in mind allowing you to grow beyond restrictions.</p>
-        
-        <div class="d-flex mt-4">
-          <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
-          <h6 class="process-title ms-3">Low Risks</h6>
-        </div>
-        <p class="process-content mb-0">By testing your proposal with an actual MVP before making any large investments.</p>
-
-        <div class="d-flex mt-4">
-          <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
-          <h6 class="process-title ms-3">Improved ROI</h6>
-        </div>
-        <p class="process-content mb-0">Focus on features that provide the greatest value leading to higher profits.</p>
-
-        <div class="d-flex mt-4">
-          <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
-          <h6 class="process-title ms-3">Flexibility</h6>
-        </div>
-        <p class="process-content mb-0">Our MVP development services support straightforward adaption and expansion.</p>
-
-        <div class="d-flex mt-4">
-          <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
-          <h6 class="process-title ms-3">Advance Support</h6>
-        </div>
-        <p class="process-content mb-0">Make use of great abilities from an  Ideal MVP development agency.</p>
-
-        <div class="mt-4">
-          <p class="process-content mb-0">We can help you make a lasting impression in the market by combining your MVP with the needs of your intended customers. 
-            These advantages make WP Whales a top choice for those eager to maximize the scope of their future.</p>
-        </div>
+    <?php
+    // Loop through benefit 1 to 7
+    for ($i = 1; $i <= 7; $i++) :
+      $title = get_field("benefit_{$i}_title",$benefits_page->ID);
+      $desc = get_field("benefit_{$i}_description",$benefits_page->ID);
+      if ($title && $desc) :
+    ?>
+      <div class="d-flex mt-4">
+        <img class="benefits-img mb-1" src="<?php echo get_template_directory_uri(); ?>/src/images/benefits.svg" alt="img">
+        <h6 class="process-title ms-3"><?php echo esc_html($title); ?></h6>
       </div>
-    </section>
+      <p class="process-content mb-0"><?php echo esc_html($desc); ?></p>
+    <?php endif; endfor; ?>
+
+    <div class="mt-4">
+      <p class="process-content mb-0"><?php the_field('closing_paragraph',$benefits_page->ID); ?></p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Why Choose us?-->
-    <section class="container-fluid sec">
-      <div class="col-md-10">
-        <h2 class="overview-project">What Makes WP Whales the Preferred Choice for MVP Development Projects?</h2>
-        <p class="overview-text">WP Whales is more than just a service distributor. We are your strategic partner in shaping your company's foundation. 
-          Our MVP software development services are designed to offer value at every stage of the process.
-        </p>
-        <div class="mt-4">
-          <h6 class="process-title">Here's Why:</h6>
+    <?php 
+$mvp_page = get_page_by_path('service-why-choose-us');
+?>
+
+<section class="container-fluid sec">
+  <div class="col-md-10">
+    <h2 class="overview-project"><?php the_field('section_title', $mvp_page->ID); ?></h2>
+    <p class="overview-text"><?php the_field('section_description', $mvp_page->ID); ?></p>
+
+    <div class="mt-4">
+      <h6 class="process-title"><?php the_field('why_title', $mvp_page->ID); ?></h6>
+    </div>
+
+    <div class="row choice mt-3">
+      <div class="col-md-4 card-choice">
+        <div class="p-4 h-100 rounded-3 card-choose">
+          <h6 class="process-title"><?php the_field('feature_1_title', $mvp_page->ID); ?></h6>
+          <p class="mb-0 process-content"><?php the_field('feature_1_description', $mvp_page->ID); ?></p>
         </div>
-        
-        <div class="row choice  mt-3">
-          <div class="col-md-4 card-choice">
-            <div class="p-4 h-100 rounded-3 card-choose">
-              <h6 class="process-title">Technical Mastery</h6>
-              <p class="mb-0 process-content">Our team of MVP experts excels in cutting edge technologies.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-4 h-100 rounded-3 card-choose">
-              <h6 class="process-title">Consumer Engagement</h6>
-              <p class="mb-0 process-content">We prioritize transparency, collaboration and happy customers.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="p-4 h-100 rounded-3 card-choose ">
-              <h6 class="process-title">Tailored Techniques</h6>
-              <p class="mb-0 process-content">We personalize every job to meet your specific demands.</p>
-            </div>
-          </div>
-        </div>
-        <p class="mb-0 process-content mt-3">Working with us is like working with a partner who is equally committed to your achievement.</p>
       </div>
-    </section>
+
+      <div class="col-md-4 card-choice">
+        <div class="p-4 h-100 rounded-3 card-choose">
+          <h6 class="process-title"><?php the_field('feature_2_title', $mvp_page->ID); ?></h6>
+          <p class="mb-0 process-content"><?php the_field('feature_2_description', $mvp_page->ID); ?></p>
+        </div>
+      </div>
+
+      <div class="col-md-4 card-choice">
+        <div class="p-4 h-100 rounded-3 card-choose">
+          <h6 class="process-title"><?php the_field('feature_3_title', $mvp_page->ID); ?></h6>
+          <p class="mb-0 process-content"><?php the_field('feature_3_description', $mvp_page->ID); ?></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="mb-0 process-content mt-3"><?php the_field('closing_line', $mvp_page->ID); ?></p>
+  </div>
+</section>
+
 
     <!--Cover Image with 2 columns-->
     <section class="container-fluid sec">

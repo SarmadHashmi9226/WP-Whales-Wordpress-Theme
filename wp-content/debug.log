@@ -64,3 +64,44 @@
 [19-May-2025 12:54:35 UTC] PHP Deprecated:  preg_split(): Passing null to parameter #2 ($subject) of type string is deprecated in /app/wp-content/themes/WP-Whales/index.php on line 73
 [19-May-2025 12:54:36 UTC] PHP Deprecated:  preg_split(): Passing null to parameter #2 ($subject) of type string is deprecated in /app/wp-content/themes/WP-Whales/index.php on line 73
 [19-May-2025 12:54:37 UTC] PHP Deprecated:  preg_split(): Passing null to parameter #2 ($subject) of type string is deprecated in /app/wp-content/themes/WP-Whales/index.php on line 73
+[20-May-2025 07:21:11 UTC] Automatic updates starting...
+[20-May-2025 07:21:12 UTC]   Automatic plugin updates starting...
+[20-May-2025 07:21:12 UTC]   Automatic plugin updates complete.
+[20-May-2025 07:21:13 UTC] Automatic updates complete.
+[20-May-2025 12:08:19 UTC] Automatic updates starting...
+[20-May-2025 12:08:21 UTC]   Automatic plugin updates starting...
+[20-May-2025 12:08:21 UTC]   Automatic plugin updates complete.
+[20-May-2025 12:08:25 UTC] Automatic updates complete.
+[20-May-2025 13:08:33 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:39
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/index.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 39
+[21-May-2025 07:44:53 UTC] Automatic updates starting...
+[21-May-2025 07:44:54 UTC]   Automatic plugin updates starting...
+[21-May-2025 07:44:54 UTC]   Automatic plugin updates complete.
+[21-May-2025 07:44:56 UTC] Automatic updates complete.
+[21-May-2025 11:44:08 UTC] PHP Warning:  Undefined variable $icon in /app/wp-content/themes/WP-Whales/page-our-services.php on line 61
+[21-May-2025 12:11:47 UTC] Automatic updates starting...
+[21-May-2025 12:11:49 UTC]   Automatic plugin updates starting...
+[21-May-2025 12:11:49 UTC]   Automatic plugin updates complete.
+[21-May-2025 12:11:51 UTC] Automatic updates complete.
+[21-May-2025 13:39:14 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /app/wp-content/themes/WP-Whales/page-our-services.php on line 490
+[21-May-2025 13:41:19 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /app/wp-content/themes/WP-Whales/page-our-services.php on line 495
+[22-May-2025 09:30:23 UTC] PHP Warning:  wp_version_check(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /app/wp-includes/functions.php on line 6121
+[22-May-2025 09:30:55 UTC] PHP Warning:  wp_update_plugins(): An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /app/wp-includes/functions.php on line 6121
+[22-May-2025 09:49:58 UTC] PHP Parse error:  syntax error, unexpected token "<" in /app/wp-content/themes/WP-Whales/page-our-services.php on line 358
+[22-May-2025 13:00:12 UTC] Automatic updates starting...
+[22-May-2025 13:00:14 UTC]   Automatic plugin updates starting...
+[22-May-2025 13:00:14 UTC]   Automatic plugin updates complete.
+[22-May-2025 13:00:15 UTC] Automatic updates complete.
+[23-May-2025 09:28:19 UTC] Automatic updates starting...
+[23-May-2025 09:28:21 UTC]   Automatic plugin updates starting...
+[23-May-2025 09:28:21 UTC]   Automatic plugin updates complete.
+[23-May-2025 09:28:23 UTC] Automatic updates complete.
