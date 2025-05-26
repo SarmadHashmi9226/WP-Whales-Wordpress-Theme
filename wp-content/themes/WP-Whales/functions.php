@@ -21,6 +21,7 @@ add_action('wp_enqueue_scripts', 'wp_whales_enqueue_assets');
 // Theme support for thumbnails
 
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'custom-logo' );
 
 /**
  * Custom Footer Menu
@@ -30,8 +31,7 @@ function register_footer_menus() {
         'footer_company' => __('Footer Company Menu'),
         'footer_services' => __('Footer Services Menu'),
         'footer_resources' => __('Footer Resources Menu'),
-        'header_menu' => __('Header Navigation'),
-        
+        'primary_menu' => __('Primary Menu'),
     ]);
 }
 add_action('after_setup_theme', 'register_footer_menus');
@@ -46,4 +46,5 @@ require_once get_template_directory() . '/includes/testimonial-post-type.php';
 require_once get_template_directory() . '/includes/tech-stack-post-type.php';
 require_once get_template_directory() . '/includes/client-feedback-post-type.php';
 require_once get_template_directory() . '/includes/success_story-post-type.php';
+require_once get_template_directory() . '/includes/class-wp-bootstrap-mega-menu-walker.php';
 

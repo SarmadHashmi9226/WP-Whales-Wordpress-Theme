@@ -57,7 +57,21 @@ input[type="checkbox"]:checked{
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-
+.dropdown-toggle-indicator {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+.dropdown-toggle-indicator::before {
+    content: "▼"; 
+    font-size: 0.6em;
+    margin-left: 0.25rem;
+}
 .nav-button:hover .default-icon {
   display: none;
 }

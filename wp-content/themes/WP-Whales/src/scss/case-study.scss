@@ -143,13 +143,13 @@
 
 .start-quote {
     position: absolute;
-    bottom: 240px;
+    bottom: 165px;
 }
 
 .end-quote {
-    position: absolute;
-    left: 530px;
-    bottom: -1px;
+  position: absolute;
+  left: 306px;
+  bottom: 37px;
 }
 .black-text{
   font-family: v.$font-inter;
@@ -283,10 +283,129 @@
   margin-left: 165px;
   margin-top: 30px;
 }
+/* Card wrapper */
+.card-case-2 {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  border-radius: 10px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: transform 0.3s ease !important;
+  width: 100% !important;
+}
+
+.card-case-2:hover {
+  transform: translateY(-5px) !important;
+}
+
+/* Ensure cards are centered within the slider */
+.success-slider {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 30px !important;
+}
+
+/* Make each card have consistent width and auto center in its column */
+.success-slider .col-md-6 {
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+}
+
+/* Card Image */
+.card-img-top-2 {
+  max-width: 520px !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+/* Hover Overlay */
+.hover-overlay-2 {
+  position: absolute !important;
+  top: 15px !important;
+  left: 15px !important;
+  max-width: 520px !important;
+  height: 300px !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.3s ease-in-out !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 20px !important;
+  border-radius: 10px;
+}
+
+.card-case-2:hover .hover-overlay-2 {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Hover text */
+.hover-text-2 {
+  color: #fff !important;
+  text-align: center !important;
+}
+
+.hover-text-2 p {
+  font-size: 16px !important;
+  margin-bottom: 15px !important;
+}
+
+.hover-text-2 a.btn {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-radius: 25px !important;
+  padding: 6px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+
+/* Logo + Subtitle below the card */
+.card-case-2 + .d-flex {
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: 15px !important;
+}
+
+/* Logo Image */
+.case-logo-2 {
+  width: 90px !important;
+  height: 40px !important;
+  object-fit: contain !important;
+}
+
+/* Subtitle Text */
+.success-content-2 {
+  font-size: 14px !important;
+  color: #444 !important;
+  margin-left: 195px !important;
+}
+
+/* Container Padding */
+.container-hover-2 {
+  padding: 15px !important;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .card-img-top-2 {
+    height: 200px !important;
+  }
+  .hover-text-2 p {
+    font-size: 14px !important;
+  }
+}
 
 /* Success Stories-2 */
 .card-2{
-  max-height: 511px;
+  height: 450px !important;
   max-width: 520px;
 }
 .card-body-2{
@@ -328,7 +447,7 @@
   font-size: 18px;
   font-weight: 600;
   color: #222222;
-  right: 415px;
+  right: 380px;
 }
 .btn-link-prev-2{
   position: absolute;

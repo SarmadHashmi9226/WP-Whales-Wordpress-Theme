@@ -153,3 +153,197 @@ Stack trace:
 [23-May-2025 15:24:45 UTC] PHP Warning:  Array to string conversion in /app/wp-content/themes/WP-Whales/page-case-studies.php on line 488
 [23-May-2025 15:24:45 UTC] PHP Warning:  Undefined variable $case_logo_url in /app/wp-content/themes/WP-Whales/page-case-studies.php on line 501
 [23-May-2025 15:55:17 UTC] PHP Warning:  Array to string conversion in /app/wp-content/themes/WP-Whales/page-case-studies.php on line 500
+[26-May-2025 09:57:39 UTC] Automatic updates starting...
+[26-May-2025 09:57:42 UTC]   Automatic plugin updates starting...
+[26-May-2025 09:57:42 UTC]   Automatic plugin updates complete.
+[26-May-2025 09:57:45 UTC] Automatic updates complete.
+[26-May-2025 12:08:03 UTC] Automatic updates starting...
+[26-May-2025 12:08:05 UTC]   Automatic plugin updates starting...
+[26-May-2025 12:08:05 UTC]   Automatic plugin updates complete.
+[26-May-2025 12:08:08 UTC] Automatic updates complete.
+[26-May-2025 12:47:45 UTC] PHP Warning:  Attempt to read property "title" on null in /app/wp-includes/class-wp-customize-widgets.php on line 926
+[26-May-2025 12:54:05 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:46
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/page-case-studies.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 46
+[26-May-2025 12:54:52 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:46
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/page-case-studies.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 46
+[26-May-2025 12:54:53 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:46
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/page-case-studies.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 46
+[26-May-2025 12:54:54 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:46
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/page-case-studies.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 46
+[26-May-2025 12:57:33 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:46
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/page-case-studies.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 46
+[26-May-2025 12:57:34 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:46
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/page-case-studies.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 46
+[26-May-2025 12:57:35 UTC] PHP Fatal error:  Uncaught Error: Class "WP_Bootstrap_Navwalker" not found in /app/wp-content/themes/WP-Whales/header.php:46
+Stack trace:
+#0 /app/wp-includes/template.php(810): require_once()
+#1 /app/wp-includes/template.php(745): load_template('/app/wp-content...', true, Array)
+#2 /app/wp-includes/general-template.php(48): locate_template(Array, true, true, Array)
+#3 /app/wp-content/themes/WP-Whales/page-case-studies.php(6): get_header()
+#4 /app/wp-includes/template-loader.php(106): include('/app/wp-content...')
+#5 /app/wp-blog-header.php(19): require_once('/app/wp-include...')
+#6 /app/index.php(17): require('/app/wp-blog-he...')
+#7 {main}
+  thrown in /app/wp-content/themes/WP-Whales/header.php on line 46
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:33 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:19:34 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 31
+[26-May-2025 13:41:36 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $attributes in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 32
+[26-May-2025 13:42:32 UTC] PHP Warning:  Undefined variable $title in /app/wp-content/themes/WP-Whales/includes/class-wp-bootstrap-mega-menu-walker.php on line 33

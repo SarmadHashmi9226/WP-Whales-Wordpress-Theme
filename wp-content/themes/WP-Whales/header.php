@@ -18,166 +18,44 @@
     <title><?php bloginfo('name'); ?><?php wp_title('|', true, 'left'); ?></title>
 
     <section class="container-fluid sec">
-      <nav class="navbar navbar-expand-lg bg-body-light">
-        <div class="container-fluid col-lg-3">
-          <a class="navbar-brand" href="#">
-          <img class="main-logo" src="<?php echo get_template_directory_uri(); ?>/src/images/Logo.png" alt="WP Whales Logo">
-          </a>
-        </div>
-  
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg bg-body-light">
+    <div class="container-fluid col-lg-3">
+      <a class="navbar-brand" href="<?php echo esc_url(home_url()); ?>">
+        <?php 
+        if ( has_custom_logo() ) {
+          $custom_logo_id = get_theme_mod( 'custom_logo' );
+          $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+          echo '<img class="main-logo" src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+        } else {
+          echo '<h1>' . get_bloginfo( 'name' ) . '</h1>';
+        }
+        ?>
+      </a>
+    </div>
 
-        <div class="collapse navbar-collapse col-7" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-  
-            <li class="nav-item dropdown position-static">
-              <a data-mdb-dropdown-init class="nav-link dropdown-toggle" href="<?php echo get_permalink( get_page_by_path( 'our-services' ) ); ?>" id="navbarDropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                Services
-              </a>
-  
-              <!-- Mega Dropdown Menu -->
-              <div class="dropdown-menu mt-0" aria-labelledby="navbarDropdown">
-                <div class="container">
-                  <div class="row my-4">
-  
-                    <!-- Column 1 -->
-                    <div class="col-md-6 col-xl-3 mb-3 mb-xl-0">
-                      <div class="pt-2">
-                        <div class="d-flex align-items-center">
-                          <img src="<?php echo get_template_directory_uri(); ?>/src/images/Vector-mega.svg" alt="Services Icon" class="Vector-mega">
-                          <p class="services"><strong>All Services</strong></p>
-                        </div>
-  
-                        <div class="d-flex ">
-                          <img src="<?php echo get_template_directory_uri(); ?>/src/images/Line-1.svg" alt="Separator line" class="img-fluid vertical-line position-absolute" />
-                        </div>
-  
-                        <div class="mt-20">
-                          <div class="quote">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/images/quote.svg" alt="Quote" class="img-fluid" />
-                          </div>
-                          <p class="quote-text">
-                            We were live and our platform was having difficulty supporting a simultaneous number of users.
-                            They saved the day with their solid grip on architecture level solutions.
-                          </p>
-                        </div>
-  
-                        <div class="d-flex info align-items-center mt-4">
-                          <img src="<?php echo get_template_directory_uri(); ?>/src/images/image -mega.svg" alt="Client Image" class="image-mega">
-                          <div class="ms-3">
-                            <h5 class="mb-0">Reva McPollom</h5>
-                            <small class="text-muted">Lessonbee Founder</small>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-  
-                    <!-- Column 2 -->
-                    <div class="col-md-6 col-xl-3 mb-3 mb-xl-0">
-                      <div class="pt-2">
-                        <a href="#" class="text-body">
-                          <div class="row mb-4 border-bottom pb-2">
-                            <div class="col-2">
-                              <img src="<?php echo get_template_directory_uri(); ?>/src/images/Vector-mega.svg" alt="Vector Icon" class="Vector-mega">
-                            </div>
-                            <div class="col-10">
-                              <p class="mb-2 development"><strong>Development</strong></p>
-                              <ul class="list-unstyled mega-list">
-                                <li>Plugin</li>
-                                <li>Web Application</li>
-                                <li>Web Development</li>
-                              </ul>
-                            </div>
-                          </div>
-  
-                          <div class="row mb-4 border-bottom pb-2">
-                            <div class="col-2">
-                              <img src="<?php echo get_template_directory_uri(); ?>/src/images/Vector-mega.svg" alt="Vector Icon" class="Vector-mega">
-                            </div>
-                            <div class="col-10">
-                              <p class="mb-2 development"><strong>Integrations & Migrations</strong></p>
-                              <ul class="list-unstyled mega-list">
-                                <li>AI Integrations</li>
-                                <li>Migrations</li>
-                                <li>Headless & Rest APIs</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-  
-                    <!-- Column 3 -->
-                    <div class="col-md-6 col-xl-3 mb-3 mb-md-0">
-                      <div class="row mb-4 border-bottom pb-2">
-                        <div class="col-2">
-                          <img src="<?php echo get_template_directory_uri(); ?>/src/images/Vector-mega.svg" alt="Vector Icon" class="Vector-mega">
-                        </div>
-                        <div class="col-10">
-                          <p class="mb-2 development"><strong>Customization</strong></p>
-                          <ul class="list-unstyled mega-list">
-                            <li>Plugin</li>
-                            <li>Web Application</li>
-                            <li>Web App Development</li>
-                          </ul>
-                        </div>
-                      </div>
-  
-                      <div class="row mb-4 border-bottom pb-2">
-                        <div class="col-2">
-                          <img src="<?php echo get_template_directory_uri(); ?>/src/images/Vector-mega.svg" alt="Vector Icon" class="Vector-mega">
-                        </div>
-                        <div class="col-10">
-                          <p class="mb-2 development"><strong>White Label Services</strong></p>
-                          <ul class="list-unstyled mega-list">
-                            <li>White Label Services</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-  
-                    <!-- Column 4 -->
-                    <div class="col-md-6 col-xl-3">
-                      <div class="row mb-4 border-bottom pb-2">
-                        <div class="col-2">
-                          <img src="<?php echo get_template_directory_uri(); ?>/src/images/Vector-mega.svg" alt="Vector Icon" class="Vector-mega">
-                        </div>
-                        <div class="col-10">
-                          <p class="mb-2 development"><strong>Maintenance & Security</strong></p>
-                          <ul class="list-unstyled mega-list">
-                            <li>Maintenance</li>
-                            <li>Performance Troubleshooting</li>
-                            <li>Security Enhancements</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-  
-                  </div>
-                </div>
-              </div>
-            </li>
-  
-            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Industries We Serve</a></li>
-            <li class="nav-item">  <a class="nav-link" href="<?php echo get_permalink( get_page_by_path( 'case-studies' ) ); ?>">Case Studies</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blogs</a></li>
-          </ul>
-        </div>
-  
-        <div class="btn btn-nav ">
-          <a href="#" class="nav-button">
-            Get Started <i class="fas fa-circle default-icon"></i>
-            <i class="fas fa-arrow-right hover-icon"></i>
-          </a>
-        </div>
-      </nav>
-    </section>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse col-7" id="navbarSupportedContent">
+      <?php
+      wp_nav_menu([
+          'theme_location' => 'primary_menu',
+          'container' => false,
+          'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
+          'walker' => new WP_Bootstrap5_Mega_Menu_Walker(), 
+      ]);
+      ?>
+    </div>
+
+    <div class="btn btn-nav">
+      <a href="#" class="nav-button">
+        Get Started <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i>
+      </a>
+    </div>
+  </nav>
+</section>
+
 <?php wp_head(); ?>
   </head>
   <body>

@@ -3,22 +3,17 @@
  * Custom post type
  * Post Type Name: Case Study 
  */
-
- function create_success_story_post_type() {
-    register_post_type('success_story',
-    array(
-        'labels' => array(
-            'name' => __('Success Story'),
-            'singular_name' => __('Success Story')
-        ),
+function register_success_stories_cpt() {
+    register_post_type('success_story', [
+        'labels' => [
+            'name' => 'Success Stories',
+            'singular_name' => 'Success Story',
+        ],
         'public' => true,
         'has_archive' => true,
-        'menu_icon' => 'dashicons-portfolio',
-        'supports' => array('title', 'editor', 'thumbnail'),
-        'show_in_rest' => true,
-        
-    )
-);
-
+        'supports' => ['title', 'editor', 'thumbnail'],
+        'rewrite' => ['slug' => 'success-stories'],
+        'menu_icon' => 'dashicons-star-filled',
+    ]);
 }
-add_action('init', 'create_success_story_post_type');
+add_action('init', 'register_success_stories_cpt');

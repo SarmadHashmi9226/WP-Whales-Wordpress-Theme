@@ -56,18 +56,23 @@ $(function () {
   });
 
   // Success Card Slider
-  $('.success-card .slick-carousel').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-    infinite: true,
-    dots: false,
-    draggable: true,
-    responsive: [
-      { breakpoint: 992, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } }
-    ]
-  });
+    $('.success-slider').slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      arrows: true,
+      infinite: false,
+      prevArrow: $('.carousel-control-prev'),
+      nextArrow: $('.carousel-control-next'),
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+      ]
+    });
+  
 
   // Testimonial Slider
   var $testimonialSlider = $('.testimonial-slider');
@@ -109,3 +114,5 @@ $(function () {
     updateStepBar();
   });
 });
+
+

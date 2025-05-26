@@ -445,60 +445,62 @@ endif;
 
 <section class="container-fluid sec">
   <div class="text-center">
-    <p class="success-title mb-5"> Similar success stories</p>
+    <p class="success-title mb-5">Similar success stories</p>
   </div>
-   <div class="position-relative">
-  <!-- Previous Button -->
-  <button class="carousel-control-prev custom-arrow" type="button">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
+  <div class="position-relative">
 
-  <!-- Cards Row -->
-  <div class="row g-0 justify-content-between success-card ">
-    <!-- First Card -->
-    <div class="col-md-6">
-      <div class="card-case container-hover text-center">
-        <img src="<?php echo get_template_directory_uri(); ?>/src/images/case-1.png" class="card-img-top" alt="case-1">
-        <div class="hover-overlay">
-          <div class="hover-text">
-            <p>Enhance the App Design and Performance by integrating AI-Driven Plugins and increased transparency...</p>
-            <a href="#" class="btn btn-light mt-2">
-              <i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial
-            </a>
+    <!-- Prev Button -->
+    <button class="carousel-control-prev custom-arrow" type="button">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <!-- Dynamic Slider -->
+    <div class="row g-0 justify-content-between success-card success-slider">
+      <?php
+      $args = [
+        'post_type' => 'success_story',
+        'posts_per_page' => 6
+      ];
+      $success_query = new WP_Query($args);
+      if ($success_query->have_posts()):
+        while ($success_query->have_posts()): $success_query->the_post();
+          $hover_text = get_field('hover_text');
+          $logo_image = get_field('logo_image');
+          $subtitle = get_field('subtitle');
+      ?>
+        <div class="col-md-6">
+          <div class="card-case-2 container-hover-2 text-center">
+            <?php if (has_post_thumbnail()): ?>
+              <?php the_post_thumbnail('full', ['class' => 'card-img-top-2']); ?>
+            <?php endif; ?>
+            <div class="hover-overlay-2">
+              <div class="hover-text-2">
+                <p><?php echo esc_html($hover_text); ?></p>
+                <a href="<?php the_permalink(); ?>" class="btn btn-light mt-2">
+                  <i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial
+                </a>
+              </div>
+            </div>
+            <div class="d-flex mt-3">
+              <?php if ($logo_image): ?>
+                <img class="case-logo-2" src="<?php echo esc_url($logo_image['url']); ?>" alt="<?php echo esc_attr($logo_image['alt']); ?>" />
+              <?php endif; ?>
+              <p class="success-content-2 mb-0"><?php echo esc_html($subtitle); ?></p>
+            </div>
           </div>
         </div>
-        <div class="d-flex  mt-3">
-          <img class="case-logo " src="<?php echo get_template_directory_uri(); ?>/src/images/Case-logo-1.png" alt="case-study-logo-1" />
-          <p class="success-content mb-0">Web App Development . Health Care</p>
-        </div>
-      </div>
+      <?php
+        endwhile;
+        wp_reset_postdata();
+      endif;
+      ?>
     </div>
 
-    <!-- Second Card -->
-    <div class="col-md-6">
-      <div class="card-case container-hover text-center">
-        <img src="<?php echo get_template_directory_uri(); ?>/src/images/case-2.png" class="card-img-top" alt="case-2">
-        <div class="hover-overlay">
-          <div class="hover-text">
-            <p>Enhance the App Design and Performance by integrating AI-Driven Plugins and increased transparency...</p>
-            <a href="#" class="btn btn-light mt-2">
-              <i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial
-            </a>
-          </div>
-        </div>
-        <div class="d-flex mt-3">
-          <img class="case-logo " src="<?php echo get_template_directory_uri(); ?>/src/images/Case-logo-2.png" alt="case-study-logo-2" />
-          <p class="success-content mb-0">Web App Design . Public Service</p>
-        </div>
-      </div>
-    </div>
+    <!-- Next Button -->
+    <button class="carousel-control-next custom-arrow" type="button">
+      <span class="carousel-control-next-icon"></span>
+    </button>
   </div>
-
-  <!-- Next Button -->
-  <button class="carousel-control-next custom-arrow" type="button">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
 <div class="row justify-content-center text-align-center">
 <div class="btn  mt-4">
     <a href="#" class="nav-button">View All Case Studies here <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i></a>
@@ -562,63 +564,49 @@ endif;
 
 <section class="container-fluid sec">
   <div class="text-center">
-    <p class="success-title mb-5"> Similar success stories</p>
+    <p class="success-title mb-5">Similar success stories</p>
   </div>
   <div class="container py-5">
-    <div id="dualCardCarousel" class="carousel slide">
+    <div id="dualCardCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-  
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="card-2 border-3">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/success-1.svg" class="card-img-top" alt="Image 1" />
-              </div>
-              <div class="card-body-2">
-                <small class="text-muted success-category">Redesign & Development</small>
-                <h5 class="card-title mt-1">Transforming Optical Training with a Scalable LMS Platform</h5>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card-2 border-0">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/success-2.svg" class="card-img-top" alt="Image 2" />
-              </div>
-              <div class="card-body-2">
-                <small class="text-muted success-category">Redesign & Development</small>
-                <h5 class="card-title mt-1">Transforming Optical Training with a Scalable LMS Platform</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="row g-4">
+        <?php
+        $args = [
+          'post_type' => 'success_story',
+          'posts_per_page' => 6, // Adjust as needed
+        ];
+        $query = new WP_Query($args);
+        if ($query->have_posts()):
+          $count = 0;
+          while ($query->have_posts()): $query->the_post();
+            if ($count % 2 === 0): ?>
+              <div class="carousel-item <?= $count === 0 ? 'active' : '' ?>">
+                <div class="row g-4">
+            <?php endif; ?>
+
             <div class="col-md-6">
               <div class="card-2 border-0">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/success-1.svg" class="card-img-top" alt="Image 3" />
+                <?php if (has_post_thumbnail()): ?>
+                  <?php the_post_thumbnail('medium', ['class' => 'card-img-top']); ?>
+                <?php endif; ?>
               </div>
-              <div class="card-body-2">
-                <small class="text-muted success-category">Redesign & Development</small>
-                <h5 class="card-title mt-1">Another Platform Transformation</h5>
-              </div>
+              <small class="text-muted success-category mt-2">
+                  <?= get_field('success_category');  ?>
+                </small>
+                <h5 class="card-title mt-2"><?php the_title(); ?></h5>
             </div>
-            <div class="col-md-6">
-              <div class="card-2 border-0">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/success-2.svg" class="card-img-top" alt="Image 4" />
+
+            <?php if ($count % 2 === 1 || $count + 1 === $query->post_count): ?>
+                </div>
               </div>
-              <div class="card-body-2">
-                <small class="text-muted success-category">Redesign & Development</small>
-                <h5 class="card-title mt-1">Scalable Learning System</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-  
+            <?php endif;
+            $count++;
+          endwhile;
+          wp_reset_postdata();
+        endif;
+        ?>
       </div>
-  
-      <!-- Controls -->
+
+      <!-- Carousel Controls -->
       <div class="d-flex justify-content-between mt-4">
         <button class="btn btn-link-prev" type="button" data-bs-target="#dualCardCarousel" data-bs-slide="prev">
           <i class="bi bi-arrow-left"></i> Previous
@@ -627,53 +615,70 @@ endif;
           Next <i class="bi bi-arrow-right"></i>
         </button>
       </div>
+
       <div class="row justify-content-center text-align-center">
-        <div class="btn  mt-4">
-            <a href="#" class="nav-button">View All Case Studies here <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i></a>
-          </div>
-          </div>
+        <div class="btn mt-4">
+          <a href="<?= get_post_type_archive_link('success_story'); ?>" class="nav-button">
+            View All Case Studies here <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 <!-- Success stories single image-->
 
 <section class="container-fluid sec">
   <div class="text-center">
-    <p class="success-title mb-5"> Similar success stories</p>
+    <p class="success-title mb-5">Similar success stories</p>
   </div>
   <div class="container py-5">
     <div id="singleCardCarousel" class="carousel slide">
       <div class="carousel-inner">
-  
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <div class="row justify-content-center ">
-            <div class="col-md-6">
-              <div class="card-2 border-3">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/success-single.svg" class="card-img-top" alt="Image 1" />
-              </div>
-              <div class="card-body-2 mt-3">
-                <h5 class="card-title mt-1">Transforming Optical Training with a Scalable LMS Platform</h5>
+
+        <?php
+        $args = [
+          'post_type'      => 'success_story',
+          'posts_per_page' => 5, // Limit number of stories
+          'orderby'        => 'date',
+          'order'          => 'DESC',
+        ];
+        $query = new WP_Query($args);
+        $slide_index = 0;
+
+        if ($query->have_posts()) :
+          while ($query->have_posts()) : $query->the_post();
+            $active_class = ($slide_index === 0) ? 'active' : '';
+        ?>
+            <div class="carousel-item <?= $active_class ?>">
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="card-2 border-0">
+                    <?php if (has_post_thumbnail()) : ?>
+                      <?php the_post_thumbnail('medium', ['class' => 'card-img-top', 'alt' => get_the_title()]); ?>
+                    <?php else : ?>
+                      <img src="<?php echo get_template_directory_uri(); ?>/src/images/success-single.svg" class="card-img-top" alt="Default Image" />
+                    <?php endif; ?>
+                  </div>
+                  <div class="card-body-2 mt-3">
+                    <h5 class="card-title mt-1 ms-3"><?php the_title(); ?></h5>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-  
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="row justify-content-center">
-            <div class="col-md-6">
-              <div class="card-2 border-0">
-                <img src="<?php echo get_template_directory_uri(); ?>/src/images/success-single.svg" class="card-img-top" alt="Image 3" />
-              </div>
-              <div class="card-body-2 mt-3">
-                <h5 class="card-title mt-1">Another Platform Transformation</h5>
-              </div>
-            </div>
-          </div>
-        </div>
+        <?php
+            $slide_index++;
+          endwhile;
+          wp_reset_postdata();
+        else :
+          echo '<p class="text-center">No success stories found.</p>';
+        endif;
+        ?>
+
       </div>
+
       <!-- Controls -->
       <div class="col-md-12 d-flex justify-content-between mt-4">
         <button class="btn btn-link-prev-2" type="button" data-bs-target="#singleCardCarousel" data-bs-slide="prev">
@@ -683,13 +688,18 @@ endif;
           Next <i class="bi bi-arrow-right"></i>
         </button>
       </div>
+
+      <!-- View All Button -->
       <div class="row justify-content-center text-align-center case-study-single-btn">
-        <div class="btn  mt-4">
-            <a href="#" class="nav-button">View All Case Studies here <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i></a>
-          </div>
-          </div>
+        <div class="btn mt-4">
+          <a href="<?php echo get_post_type_archive_link('success_story'); ?>" class="nav-button">
+            View All Case Studies here <i class="fas fa-circle default-icon"></i> <i class="fas fa-arrow-right hover-icon"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
  
  <?php get_footer( );?>
