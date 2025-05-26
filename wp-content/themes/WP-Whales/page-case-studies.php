@@ -6,11 +6,48 @@
  get_header();
  
  ?>
-<nav aria-label="breadcrumb" class="bg-light py-2 px-3 ">
+ <nav aria-label="breadcrumb" class="bg-light py-2 px-3">
   <ol class="breadcrumb mb-0 ms-5">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="/case-study.html">Case Studies</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Athletes Ocean</li>
+    <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
+
+    <?php
+    global $post;
+
+    if ( is_page() && !is_front_page() ) {
+        // For hierarchical pages
+        $ancestors = get_post_ancestors($post);
+        $ancestors = array_reverse($ancestors);
+
+        foreach ( $ancestors as $ancestor_id ) {
+            echo '<li class="breadcrumb-item"><a href="' . get_permalink($ancestor_id) . '">' . get_the_title($ancestor_id) . '</a></li>';
+        }
+
+        echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+
+    } elseif ( is_singular('services') ) {
+        // For single CPT item
+        echo '<li class="breadcrumb-item"><a href="' . get_post_type_archive_link('services') . '">Services</a></li>';
+        echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+
+    } elseif ( is_post_type_archive('services') ) {
+        // CPT archive
+        echo '<li class="breadcrumb-item active" aria-current="page">Services</li>';
+
+    } elseif ( is_single() ) {
+        // Regular post
+        echo '<li class="breadcrumb-item"><a href="' . get_permalink( get_option('page_for_posts') ) . '">Blog</a></li>';
+        echo '<li class="breadcrumb-item active" aria-current="page">' . get_the_title() . '</li>';
+
+    } elseif ( is_category() || is_tag() ) {
+        echo '<li class="breadcrumb-item active" aria-current="page">' . single_term_title('', false) . '</li>';
+
+    } elseif ( is_search() ) {
+        echo '<li class="breadcrumb-item active" aria-current="page">Search results for "' . get_search_query() . '"</li>';
+
+    } elseif ( is_404() ) {
+        echo '<li class="breadcrumb-item active" aria-current="page">404 Not Found</li>';
+    }
+    ?>
   </ol>
 </nav>
     <!--Header cover-->
@@ -68,41 +105,7 @@
 <!-- Sidebar-->
  <div class="d-flex">
   <div class="col-md-3">
- <aside class="sidebar">
-  <div class="sidebar-content border-left text-decoration-none mb-2">
-    <a class="overview"  href="#" role="button">
-    Overview
-  </a>
-  </div>
-  <div class="sidebar-content mb-2">
-     <a class="client-testimonial"  href="#" role="button">
-    Client Testimonial
-  </a>
-  </div>
-  <div class="sidebar-content d-flex mb-2 ">
-    <a class="delivered-solution" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Delivered Solutions
-  </a>
-  <i class="fa fa-chevron-down deliver-icon-1" aria-hidden="true"></i>
-  </div>
-
-  <div class="sidebar-content border-left d-flex mb-2 ">
-     <a class="delivered-solution-nav" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="collapseTrigger">
-    Delivered Solutions
-  </a>
-  <i class="fa fa-chevron-down deliver-icon" id="toggleIcon" aria-hidden="true"></i>
-  </div>
-  <div class="collapse" id="collapseExample">
-  <ul class="list-unstyled nav-collapse">
-    <li class="mb-2">Subscription Groups</li>
-    <li class="mb-2">HLS Streaming Transition</li>
-    <li class="mb-2">Video Upload Enhancement</li>
-    <li class="mb-2">UI/UX Transformation</li>
-    <li class="mb-2">Instructors Commission Model</li>
-    <li class="mb-2">Team Space Development</li>
-  </ul>
-</div>
-  </aside>
+ <?php get_sidebar( 'case-study' ); ?>
 </div>
 
 <!-- MAin Content-->
@@ -129,93 +132,146 @@
     </div>
 
     <!-- Client Feedback 1-->
-    <div class="mt-5">
-       <h2 class="overview-project">Client Feedback</h2>
-    <p class="overview-text">Identifying products, processes and expertise to move the project forward so our clients get the best outcome.</p>
-   <div class="goal mt-5 position-relative">
-  <p class="quote-overview start-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></p>
-  <p class="overview-text">
-    &ensp; &ensp; WP Whales are incredible! Give them a project and a scope, and they will take it to the next level. Hamza and Bilal interpreted our vision and not only delivered but exceeded our expectations every step of the way. Their solutions are efficient, timely, and always of the highest quality. We've trusted them with our platform for over 2.5 years, and they’ve consistently proven their worth.
-    <br><br>
-    <p class="black-text">I would recommend WP Whales to anyone needing expert development, whether it’s general web development, CMS, or custom functionality!</p>
-  </p>
-  <p class="quote-overview end-quote"><i class="fa fa-quote-right" aria-hidden="true"></i></p>
-</div>
-<div class="mt-3">
-  <p class="overview-info">Eric Lundgren</p>
-  <p class="overview-designation">CO FOUNDER</p>
-  <p class="overview-company">ATHLETES OCEAN</p>
-</div>
+    <?php 
+$args = array(
+    'post_type' => 'client_feedback',
+    'posts_per_page' => 4, 
+    'orderby' => 'date',
+    'order' => 'DESC',
+);
+$feedback_query = new WP_Query( $args );
 
-    <!-- Client Feedback 2-->
+if ( $feedback_query->have_posts() ) :
 
- <div class="mt-5 ">
-       <h2 class="overview-project">Client Feedback</h2>
-    <p class="overview-text ">Identifying products, processes and expertise to move the project forward so our clients get the best outcome.</p>
-    <div class=" row-1 d-flex mt-3">
-    <div class="col-6">
-   <div class="goal position-relative image-content w-100 h-100">
-  <p class="quote-overview start-quote-2"><i class="fa fa-quote-left" aria-hidden="true"></i></p>
-  <p class="overview-text me-3 ">
-    &ensp; &ensp; WP Whales are incredible! Give them a project and a scope, and they will take it to the next level. Hamza and Bilal interpreted our vision and not only delivered but exceeded our expectations every step of the way. 
-    Their solutions are efficient, timely, and always of the highest quality. We've trusted them with our platform for over 2.5 years, and they’ve consistently proven their worth.
-    <br><br>
-    <p class="black-text mb-3 me-3">I would recommend WP Whales to anyone needing expert development, whether it’s general web development, CMS, or custom functionality!</p>
-  </p>
-  <p class="quote-overview end-quote-2"><i class="fa fa-quote-right" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="col-6 mt-4">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/images/feedback1.svg" alt="feedback1">
-</div>
-</div>
-<div class="mt-1">
-  <p class="overview-info">Eric Lundgren</p>
-  <p class="overview-designation">CO FOUNDER</p>
-  <p class="overview-company">ATHLETES OCEAN</p>
-</div>
-    </div>
-  </div>
+    $count = 1; 
+    
+    while ( $feedback_query->have_posts() ) : $feedback_query->the_post();
 
-    <!-- Client Feedback 3-->
+        // Fetch ACF fields
+        $feedback_heading      = get_field('feedback_heading');
+        $feedback_subheading   = get_field('feedback_subheading');
+        $testimonial_content   = get_field('testimonial_content');
+        $testimonial_highlight = get_field('testimonial_highlight');
+        $client_name           = get_field('client_name');
+        $client_designation    = get_field('client_designation');
+        $client_company        = get_field('client_company');
+        $client_image          = get_field('feedback_image_2'); 
 
+        if ( is_array($client_image) && isset($client_image['url']) ) {
+            $client_image_url = esc_url($client_image['url']);
+        } elseif ( is_numeric($client_image) ) {
+            $img_src = wp_get_attachment_image_src($client_image, 'full');
+            $client_image_url = esc_url($img_src[0]);
+        } else {
+            $client_image_url = ''; 
+        }
+        
 
-<div class="mt-5 ">
-       <h2 class="overview-project">Client Feedback</h2>
-    <p class="overview-text ">Identifying products, processes and expertise to move the project forward so our clients get the best outcome.</p>
-    <div class=" row-1 d-flex mt-3">
-    <div class="col-6">
-   <div class="goal position-relative image-content w-100 h-100">
-  <p class="quote-overview start-quote-2"><i class="fa fa-quote-left" aria-hidden="true"></i></p>
-  <p class="overview-text me-3 ">
-    &ensp; &ensp; WP Whales are incredible! Give them a project and a scope, and they will take it to the next level. Hamza and Bilal interpreted our vision and not only delivered but exceeded our expectations every step of the way. 
-    Their solutions are efficient, timely, and always of the highest quality. We've trusted them with our platform for over 2.5 years, and they’ve consistently proven their worth.
-    <br><br>
-    <p class="black-text mb-3 me-3">I would recommend WP Whales to anyone needing expert development, whether it’s general web development, CMS, or custom functionality!</p>
-  </p>
-  <p class="quote-overview end-quote-2"><i class="fa fa-quote-right" aria-hidden="true"></i></p>
-</div>
-</div>
-<div class="col-6 mt-4">
-  <img src="<?php echo get_template_directory_uri(); ?>/src/images/feedback-2.svg" alt="feedback1">
-</div>
-</div>
-<div class="mt-1">
-  <p class="overview-info">Eric Lundgren</p>
-  <p class="overview-designation">CO FOUNDER</p>
-  <p class="overview-company">ATHLETES OCEAN</p>
-</div>
-    </div>
-  </div>
+        if ($count == 1): ?>
+            <!-- Client Feedback 1 -->
+            <div class="mt-5">
+               <h2 class="overview-project"><?php echo esc_html($feedback_heading); ?></h2>
+               <p class="overview-text"><?php echo esc_html($feedback_subheading); ?></p>
+               <div class="goal mt-5 position-relative">
+                  <p class="quote-overview start-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></p>
+                  <p class="overview-text">
+                    &ensp; &ensp; <?php echo wp_kses_post($testimonial_content); ?>
+                    <br><br>
+                    <p class="black-text"><?php echo wp_kses_post($testimonial_highlight); ?></p>
+                  </p>
+                  <p class="quote-overview end-quote"><i class="fa fa-quote-right" aria-hidden="true"></i></p>
+               </div>
+               <div class="mt-3">
+                  <p class="overview-info"><?php echo esc_html($client_name); ?></p>
+                  <p class="overview-designation"><?php echo esc_html($client_designation); ?></p>
+                  <p class="overview-company"><?php echo esc_html($client_company); ?></p>
+               </div>
+            </div>
 
+        <?php elseif ($count == 2): ?>
+            <!-- Client Feedback 2 -->
+            <div class="mt-5 ">
+               <h2 class="overview-project"><?php echo esc_html($feedback_heading); ?></h2>
+               <p class="overview-text "><?php echo esc_html($feedback_subheading); ?></p>
+               <div class=" row-1 d-flex mt-3">
+                   <div class="col-6">
+                       <div class="goal position-relative image-content w-100 h-100">
+                          <p class="quote-overview start-quote-2"><i class="fa fa-quote-left" aria-hidden="true"></i></p>
+                          <p class="overview-text me-3 ">
+                            &ensp; &ensp; <?php echo wp_kses_post($testimonial_content); ?>
+                            <br><br>
+                            <p class="black-text mb-3 me-3"><?php echo wp_kses_post($testimonial_highlight); ?></p>
+                          </p>
+                          <p class="quote-overview end-quote-2"><i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                       </div>
+                   </div>
+                   <div class="col-6 mt-4">
+                      <?php if($client_image_url): ?>
+                        <img src="<?php echo $client_image_url; ?>" alt="<?php echo esc_attr($client_name); ?>">
+                      <?php else: ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/feedback1.svg" alt="feedback1">
+                      <?php endif; ?>
+                   </div>
+               </div>
+               <div class="mt-1">
+                  <p class="overview-info"><?php echo esc_html($client_name); ?></p>
+                  <p class="overview-designation"><?php echo esc_html($client_designation); ?></p>
+                  <p class="overview-company"><?php echo esc_html($client_company); ?></p>
+               </div>
+            </div>
 
-    <!-- Client Feedback 4-->
+        <?php elseif ($count == 3): ?>
+            <!-- Client Feedback 3 -->
+            <div class="mt-5 ">
+               <h2 class="overview-project"><?php echo esc_html($feedback_heading); ?></h2>
+               <p class="overview-text "><?php echo esc_html($feedback_subheading); ?></p>
+               <div class=" row-1 d-flex mt-3">
+                   <div class="col-6">
+                       <div class="goal position-relative image-content w-100 h-100">
+                          <p class="quote-overview start-quote-2"><i class="fa fa-quote-left" aria-hidden="true"></i></p>
+                          <p class="overview-text me-3 ">
+                            &ensp; &ensp; <?php echo wp_kses_post($testimonial_content); ?>
+                            <br><br>
+                            <p class="black-text mb-3 me-3"><?php echo wp_kses_post($testimonial_highlight); ?></p>
+                          </p>
+                          <p class="quote-overview end-quote-2"><i class="fa fa-quote-right" aria-hidden="true"></i></p>
+                       </div>
+                   </div>
+                   <div class="col-6 mt-4">
+                      <?php if($client_image_url): ?>
+                        <img src="<?php echo $client_image_url; ?>" alt="<?php echo esc_attr($client_name); ?>">
+                      <?php else: ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/feedback-2.svg" alt="feedback1">
+                      <?php endif; ?>
+                   </div>
+               </div>
+               <div class="mt-1">
+                  <p class="overview-info"><?php echo esc_html($client_name); ?></p>
+                  <p class="overview-designation"><?php echo esc_html($client_designation); ?></p>
+                  <p class="overview-company"><?php echo esc_html($client_company); ?></p>
+               </div>
+            </div>
 
+        <?php elseif ($count == 4): ?>
+            <!-- Client Feedback 4 -->
+            <div class="mt-5">
+               <h2 class="overview-project"><?php echo esc_html($feedback_heading); ?></h2>
+               <p class="overview-text"><?php echo esc_html($feedback_subheading); ?></p>
+               <?php if($client_image_url): ?>
+                <img class="overview-img mt-3" src="<?php echo $client_image_url; ?>" alt="<?php echo esc_attr($client_name); ?>">
+               <?php else: ?>
+                <img class="overview-img mt-3" src="<?php echo get_template_directory_uri(); ?>/src/images/overview-large.svg" alt="img">
+               <?php endif; ?>
+            </div>
+        <?php endif;
 
-<div class="mt-5">
-   <h2 class="overview-project">Client Feedback</h2>
-    <p class="overview-text ">Identifying products, processes and expertise to move the project forward so our clients get the best outcome.</p>
-    <img class="overview-img mt-3" src="<?php echo get_template_directory_uri(); ?>/src/images/overview-large.svg" alt="img">
+        $count++;
+    endwhile;
+
+    wp_reset_postdata();
+
+endif;
+?>
 </div>
 
 <div class="mt-5">
