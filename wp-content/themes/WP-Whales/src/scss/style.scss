@@ -212,7 +212,6 @@ p {
 .navbar-nav .nav-item:hover .dropdown-menu {
   display: block !important;
   padding: 0;
-  // width: 1300px !important;
   min-height: 300px !important;
   left: 40px;
   background-color: #f0f0f0;
@@ -239,8 +238,6 @@ p {
   display: flex;
   justify-content: right;
   align-items: right;
-  // position: absolute;
-  // right: 70px;
 }
 .btn-blogs{
     width: 2rem;
@@ -622,7 +619,11 @@ p {
 .model-right {
   transform: translateX(-2.5rem);
 }
-
+.engagement-link{
+  text-decoration: none;
+  font-family: v.$font-inter;
+  color: #000000;
+}
 
 .btn-engagement{
   margin-top: 5.5rem !important;
@@ -1020,6 +1021,10 @@ padding-bottom: 2rem;
     z-index: 4;
     cursor: e-resize;
   }
+  .project-link  {
+      
+      text-decoration: none;
+    }
     .coffee{
       font-family: v.$font-inter;
       font-size: 18px;

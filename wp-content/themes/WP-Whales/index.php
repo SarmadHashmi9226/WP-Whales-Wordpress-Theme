@@ -81,6 +81,7 @@
             }
             ?>
             <div class="card">
+              
                 <div class="card-body">
                     <?php if (has_post_thumbnail()) : ?>
                         <img class="service-icon" src="<?php echo esc_url(get_the_post_thumbnail_url()); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
@@ -104,10 +105,12 @@
                                     <li><?php echo esc_html($item); ?></li>
                                 <?php endforeach; ?>
                             </ul>
-                        <?php endif; ?>
+                        <?php endif; 
+                        $learn_permalink = get_permalink(  );
+                        ?>
 
                         <div class="btn btn-large">
-                            <a href="#" class="nav-button">
+                            <a href="<?php echo esc_url( $learn_permalink);?>" class="nav-button">
                                 Learn More
                                 <i class="fas fa-circle default-icon"></i>
                                 <i class="fas fa-arrow-right hover-icon"></i>
@@ -157,6 +160,7 @@
             $logo = get_field('case_image', get_the_ID());
             $hover_text = get_field('hover_description');
             $testimonial_link = get_field('testimonial_link');
+            $permalink = get_permalink();
             ?>
             <div class="case-study-item"> 
                 <div class="card-case container-hover">
@@ -166,11 +170,9 @@
                     <div class="hover-overlay">
                         <div class="hover-text">
                             <p><?php echo esc_html($hover_text); ?></p>
-                            <?php if ($testimonial_link): ?>
-                                <a href="<?php echo esc_url($testimonial_link); ?>" class="btn btn-light mt-2">
+                                <a href="<?php echo esc_url($permalink); ?>" class="btn btn-light mt-2">
                                     <i class="fa fa-caret-right me-2 pt-1"></i> View Testimonial
                                 </a>
-                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -361,8 +363,12 @@
                   src="<?php echo get_the_post_thumbnail_url(); ?>"
                   alt="<?php the_title_attribute(); ?>"
                 />
-              <?php endif; ?>
+              <?php endif; 
+              $engage_permalink = get_permalink();
+              ?>
+              <a href="<?php echo esc_url($engage_permalink); ?>" class="engagement-link">
               <h3><?php the_title(); ?></h3>
+              </a>
               <p><?php the_content(); ?></p>
             </div>
           </div>
@@ -549,7 +555,9 @@ endif;
             <div class="slider-handle"><div class="slider-dot"></div></div>
           </div>
         </div>
-        <p class="coffee mt-3"><?php the_title(); ?></p>
+        <a href="<?php the_permalink(); ?>" class="project-link">
+        <p class="coffee mt-3"><?php the_title(); ?></p></a>
+        
         <p class="coffee-text mt-2"><?php the_excerpt(); ?></p>
       </div>
     <?php
